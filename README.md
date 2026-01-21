@@ -1,6 +1,9 @@
-# SACK Execution Guide
+# SACK: Sequentially Acquiring Concept Knowledge to Guide Continual Learning
 
-This comprehensive guide documents all functionalities available in SACK (Sequentially Acquiring Concept Knowledge to Guide Continual Learning) and how to execute them.
+**Abstract**:
+*The goal of continual learning (CL) is to adapt to new data (plasticity) while retaining the knowledge acquired from old data (stability). Existing methods focus on balancing stability and plasticity to mitigate the challenge of catastrophic forgetting while promoting learning. However, the impact of order and nature of new samples that the network is trained on remains an underexplored factor. A CL algorithm should ideally also have the ability to rank incoming samples in terms of their relationship with prior data and their effect on the learning process. In this work, we investigate if scoring and prioritizing incoming data based on their semantic relationships with the model's current knowledge can boost CL performance. We propose SACK, short for Sequentially Acquiring Concept Knowledge, a scalable and model-agnostic two-step technique for continual learning. SACK dissects categorical knowledge of the model into fine-grained concepts, computes the relationships between previously learned concepts and new concepts in each experience, and uses this relationship knowledge for prioritizing new samples. Experiments across several types of CL methods (regularization, replay, and prompt-based) in class-incremental and task-incremental settings demonstrate that our approach consistently results in higher accuracy, reduces forgetting, enhances plasticity, and handles long-tail distribution.*
+
+Below we layout a comprehensive guide which documents all functionalities available in SACK (Sequentially Acquiring Concept Knowledge to Guide Continual Learning) and how to execute them.
 
 ## Table of Contents
 
