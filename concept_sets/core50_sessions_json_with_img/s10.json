@@ -1,0 +1,99 @@
+{
+  "plug adapter": [
+    "Compact design",
+    "Weatherproof casing",
+    "Multiple outlets",
+    "Durable materials",
+    "Portable size",
+    "Grounded prongs",
+    "Outdoor-friendly"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Bright screen",
+    "Compact size",
+    "Colorful case",
+    "Sunlight reflection",
+    "Outdoor setting",
+    "Natural surroundings"
+  ],
+  "scissors": [
+    "Metal blades",
+    "Plastic handles",
+    "Outdoor setting",
+    "Green grass",
+    "Sunlight reflection"
+  ],
+  "light bulb": [
+    "Bright",
+    "Transparent",
+    "Round",
+    "Glass",
+    "Metal",
+    "Hanging",
+    "Illuminated",
+    "Outdoor"
+  ],
+  "can": [
+    "Metallic surface",
+    "Cylindrical shape",
+    "Colorful label",
+    "Lid on top",
+    "Grass or dirt background",
+    "Sunlight reflections",
+    "Possible dents or scratches"
+  ],
+  "glass": [
+    "Transparent",
+    "Cylindrical",
+    "Reflective",
+    "Clear",
+    "Smooth",
+    "Lightweight",
+    "Sunlit",
+    "Surrounded by greenery",
+    "Filled with liquid",
+    "Decorative"
+  ],
+  "ball": [
+    "Round",
+    "Colorful",
+    "Smooth",
+    "Bouncy",
+    "Lightweight",
+    "Grass",
+    "Sunlight",
+    "Playful"
+  ],
+  "marker": [
+    "Bright color",
+    "Tall structure",
+    "Distinct shape",
+    "Signage",
+    "Visible text",
+    "Natural surroundings",
+    "Open space",
+    "Weathered surface"
+  ],
+  "cup": [
+    "Ceramic material",
+    "Handle",
+    "Floral design",
+    "Green grass",
+    "Sunlight reflections",
+    "Nature backdrop",
+    "Colorful patterns"
+  ],
+  "remote control": [
+    "Compact",
+    "Buttons",
+    "Black color",
+    "Ergonomic shape",
+    "Textured surface",
+    "Weather-resistant",
+    "Natural surroundings",
+    "Grass",
+    "Sunlight"
+  ]
+}

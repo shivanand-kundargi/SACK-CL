@@ -1,0 +1,103 @@
+{
+  "plug adapter": [
+    "Compact design",
+    "Multiple sockets",
+    "Electrical ports",
+    "Plastic casing",
+    "Indicator light",
+    "Wall-mounted",
+    "Power cord",
+    "Neutral colors"
+  ],
+  "mobile phone": [
+    "Slim design",
+    "Glossy screen",
+    "Metallic finish",
+    "Touchscreen interface",
+    "Compact size",
+    "Minimalist layout",
+    "Charging cable",
+    "Soft lighting",
+    "Desk surface",
+    "Nearby accessories"
+  ],
+  "scissors": [
+    "Sharp blades",
+    "Metal handles",
+    "Cutting edge",
+    "Ergonomic design",
+    "Sturdy structure",
+    "Compact size",
+    "Reflective surface",
+    "Smooth finish",
+    "Colorful grips",
+    "Indoor setting"
+  ],
+  "light bulb": [
+    "Bright light",
+    "Glass bulb",
+    "Metal base",
+    "Warm glow",
+    "Pendant fixture",
+    "Ceiling mount",
+    "Decorative design",
+    "Soft illumination"
+  ],
+  "can": [
+    "Cylindrical shape",
+    "Metallic surface",
+    "Label graphics",
+    "Lid or cap",
+    "Reflections",
+    "Shadowing",
+    "Color variations"
+  ],
+  "glass": [
+    "Smooth",
+    "Cylindrical",
+    "Reflective",
+    "Clear",
+    "Fragile",
+    "Tall",
+    "Thin",
+    "Decorative",
+    "Filled (with liquid)"
+  ],
+  "ball": [
+    "Round shape",
+    "Smooth surface",
+    "Bright color",
+    "Indoor setting",
+    "Soft texture",
+    "Bouncing ability",
+    "Lightweight material"
+  ],
+  "marker": [
+    "Colorful",
+    "Circular",
+    "Flat",
+    "Textured",
+    "Printed",
+    "Visible",
+    "Stationary",
+    "Located"
+  ],
+  "cup": [   "Ceramic material",
+  "Handle",
+  "Floral design",
+  "Green grass",
+  "Sunlight reflections",
+  "Nature backdrop",
+  "Colorful patterns"],
+  "remote control": [
+    "Black color",
+    "Slim design",
+    "Button layout",
+    "LED indicator",
+    "Plastic material",
+    "Ergonomic shape",
+    "Compact size",
+    "Text labels",
+    "Remote control holder"
+  ]
+}

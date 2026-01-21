@@ -1,0 +1,104 @@
+{
+  "plug adapter": [
+    "Compact",
+    "Rectangular",
+    "Plastic",
+    "Ports",
+    "Cords",
+    "Wall-mounted",
+    "Neutral colors",
+    "Textured surface"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen",
+    "Compact size",
+    "Black casing",
+    "Charging cable",
+    "Screen brightness",
+    "App icons",
+    "Table surface",
+    "Ambient light"
+  ],
+  "scissors": [
+    "metal handles",
+    "ergonomic grip",
+    "polished finish",
+    "compact size",
+    "cutting edge",
+    "stationary surface",
+    "nearby paper",
+    "cluttered desk"
+  ],
+  "light bulb": [
+    "glass body",
+    "filament inside",
+    "warm light",
+    "ceiling fixture",
+    "soft illumination",
+    "metal base"
+  ],
+  "can": [
+    "Metallic surface",
+    "Circular shape",
+    "Glossy finish",
+    "Label design",
+    "Sunlight reflection",
+    "Shadow cast",
+    "Uniform height",
+    "Smooth edges"
+  ],
+  "glass": [
+    "Cylindrical",
+    "Smooth",
+    "Reflective",
+    "Clear",
+    "Thin-walled",
+    "Shine",
+    "Tabletop",
+    "Surrounding light"
+  ],
+  "ball": [
+    "Round",
+    "Colorful",
+    "Smooth",
+    "Bouncing",
+    "Textured",
+    "Bright",
+    "Sizeable",
+    "Soft"
+  ],
+  "marker": [
+    "Colorful",
+    "Cylindrical",
+    "Cap",
+    "Ink",
+    "Label",
+    "Surface",
+    "Desk",
+    "Stationery"
+  ],
+  "cup": [
+    "Handle",
+    "Round shape",
+    "Glossy finish",
+    "Colorful design",
+    "Decorative patterns",
+    "Solid base",
+    "Coffee stain",
+    "Steam rising",
+    "Table setting"
+  ],
+  "remote control": [
+    "Black plastic",
+    "Buttons",
+    "Slim shape",
+    "Glossy finish",
+    "Ergonomic design",
+    "Screen",
+    "Cable-free",
+    "Compact size",
+    "Soft edges",
+    "Minimalist layout"
+  ]
+}

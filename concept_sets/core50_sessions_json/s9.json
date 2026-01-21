@@ -1,0 +1,102 @@
+{
+  "plug adapter": [
+    "Compact",
+    "Rectangular",
+    "Plastic",
+    "Ports",
+    "Cables",
+    "Wall-mounted",
+    "Neutral colors",
+    "Minimalist"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Compact size",
+    "Glossy finish",
+    "Bright colors",
+    "Minimalist style",
+    "Charging cable",
+    "Soft lighting",
+    "Nearby objects"
+  ],
+  "scissors": [
+    "Handle grips",
+    "Sharp tips",
+    "Pivot point",
+    "Cutting edge",
+    "Ergonomic design",
+    "Table surface",
+    "Workspace clutter"
+  ],
+  "light bulb": [
+    "Bright",
+    "Glass",
+    "Round",
+    "Metal",
+    "Fixture",
+    "Warm",
+    "Ceiling-mounted",
+    "Illuminated"
+  ],
+  "can": [
+    "cylindrical shape",
+    "label design",
+    "shiny finish",
+    "flat top",
+    "base rim",
+    "surrounding table",
+    "ambient lighting"
+  ],
+  "glass": [
+    "Clear",
+    "Smooth",
+    "Cylindrical",
+    "Reflective",
+    "Thin",
+    "Empty",
+    "Shiny",
+    "Colorless",
+    "Fragile"
+  ],
+  "ball": [
+    "Round",
+    "Smooth",
+    "Colorful",
+    "Bouncy",
+    "Soft",
+    "Textured",
+    "Lightweight",
+    "Bright"
+  ],
+  "marker": [
+    "Colorful",
+    "Cylindrical",
+    "Cap",
+    "Ink",
+    "Label",
+    "Writing surface",
+    "Desk",
+    "Stationery"
+  ],
+  "cup": [
+    "Round shape",
+    "Handle present",
+    "Glossy finish",
+    "Colorful design",
+    "Textured surface",
+    "Table setting",
+    "Steam rising",
+    "Decorative patterns",
+    "Solid base"
+  ],
+  "remote control": [
+    "button layout",
+    "sleek design",
+    "compact size",
+    "digital display",
+    "ergonomic shape",
+    "cable nearby",
+    "couch setting"
+  ]
+}

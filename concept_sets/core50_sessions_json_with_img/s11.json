@@ -1,0 +1,114 @@
+{
+  "plug adapter": [
+    "Compact",
+    "Plastic",
+    "Prongs",
+    "Socket",
+    "White",
+    "Electrical",
+    "Indoor"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Flat screen",
+    "Buttons",
+    "Touch interface",
+    "Compact size",
+    "Plastic casing",
+    "Charging cable",
+    "Accessories",
+    "Bright display",
+    "Colorful case",
+    "Minimalist design",
+    "Wireless charging"
+  ],
+  "scissors": [
+    "Metallic blades",
+    "Plastic handles",
+    "Sharp edges",
+    "Pivot point",
+    "Compact size",
+    "Indoor lighting",
+    "Workspace setting",
+    "Neutral colors"
+  ],
+  "light bulb": [
+    "Glass dome",
+    "Bright light",
+    "Filament",
+    "Circular shape",
+    "Metal base",
+    "Warm glow",
+    "Pendant fixture",
+    "Ceiling mount"
+  ],
+  "can": [
+    "Metallic",
+    "Cylindrical",
+    "Labeled",
+    "Glossy",
+    "Reflective",
+    "Compact",
+    "Colorful",
+    "Stackable",
+    "Smooth",
+    "Sealed"
+  ],
+  "glass": [
+    "Cylindrical",
+    "Reflective",
+    "Smooth",
+    "Clear",
+    "Minimalistic",
+    "Light-catching",
+    "Fragile",
+    "Simple",
+    "Functional"
+  ],
+  "ball": [
+    "Round",
+    "Colorful",
+    "Smooth",
+    "Bouncy",
+    "Patterned",
+    "Lightweight",
+    "Indoor setting",
+    "Soft surface"
+  ],
+  "marker": [
+    "Colorful",
+    "Cylindrical",
+    "Pointed tip",
+    "Ink residue",
+    "Cap on top",
+    "Flat surface",
+    "Writable surface",
+    "Nearby papers",
+    "Desk surface",
+    "Stationery items"
+  ],
+  "cup": [
+    "Round shape",
+    "Handle",
+    "Ceramic material",
+    "Glossy finish",
+    "Colorful design",
+    "Flat base",
+    "Placed on table",
+    "Reflective surface",
+    "Coffee or tea contents",
+    "Warm lighting"
+  ],
+  "remote control": [
+    "Compact",
+    "Buttons",
+    "Sleek",
+    "Black",
+    "Plastic",
+    "Ergonomic",
+    "Wireless",
+    "Flat",
+    "Display",
+    "Cables (optional)"
+  ]
+}

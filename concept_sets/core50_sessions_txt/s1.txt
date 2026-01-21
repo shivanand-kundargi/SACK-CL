@@ -1,0 +1,50 @@
+o1: Abstract design, Colorful patterns, Geometric shapes, Textured surface, Bright colors, Dynamic composition, Fluid forms, Layered elements
+o10: Circular shape, Dark color, Smooth surface, Subtle texture, Central focal point, Minimalistic design, Shadow effects
+o11: Abstract shapes, Colorful patterns, Geometric structure, Dynamic movement, Layered textures, Bright contrasts, Organic forms
+o12: Circular shape, Smooth surface, Bright color, Central opening, Textured rim, Minimalistic design, Shadow presence
+o13: Circular shape, Smooth surface, Dark color, Central opening, Textured pattern, Shadowed edges
+o14: Circular shape, Bright color, Textured surface, Central pattern, Glossy finish
+o15: Abstract pattern, Colorful design, Geometric shapes, Layered texture, Dynamic contrast, Organic forms, Bright hues
+o16: Colorful, Geometric shapes, Organic forms, Abstract patterns, Vibrant tones, Layered textures, Light reflections, Dynamic composition
+o17: Abstract design, Colorful patterns, Geometric shapes, Complex textures, Bright contrasts, Organic forms, Layered elements
+o18: Circular shape, Bright color, Smooth surface, Central pattern, Surrounded by greenery
+o19: Abstract design, Colorful patterns, Organic shapes, Soft gradients, Fluid motion
+o2: Circular shape, Colorless gas, Invisible, Diffused light, Atmospheric presence
+o20: Circular shape, Smooth surface, Bright color, Central pattern, Textured edges, Reflective sheen, Shadowed background
+o21: Abstract design, Colorful patterns, Geometric shapes, Textured surface, Vibrant hues, Organic forms, Layered elements
+o22: Circular shape, Metallic surface, Smooth texture, Reflective finish, Blue color, Floating position, Soft lighting
+o23: Circular shape, Bright colors, Smooth texture, Central core, Petal-like extensions, Green foliage, Natural setting
+o24: Textured surface, Organic shape, Soft colors, Natural elements
+o25: Circular shape, Smooth surface, Bright color, Central point, Symmetrical design
+o26: Circular shape, Dark color, Smooth texture, Central opening, Surrounded by grass
+o27: Abstract design, Colorful patterns, Curved shapes, Textured surface, Symmetrical layout, Vivid contrast, Geometric elements
+o28: Circular shape, Bright color, Smooth surface, Central core, Green foliage, Textured skin
+o29: Circular shape, Smooth surface, Bright color, Central hole, Textured rim
+o3: Circular shape, Blue color, Gaseous structure, Layered atmosphere, Transparent appearance
+o30: Circular shape, Dual-color scheme, Smooth surface, Textured details, Central design, Solid base, Reflective elements, Subtle gradients
+o31: Geometric shapes, Bright colors, Abstract design, Layered texture, Symmetrical patterns, Vivid contrasts, Dynamic composition
+o32: Bright colors, Abstract shapes, Geometric patterns, Complex textures, Layered elements, Dynamic composition, Vibrant contrasts
+o33: Round shape, Bright color, Smooth surface, Reflective texture, Central pattern, Subtle shading, Minimalistic design, Soft edges
+o34: Abstract design, Colorful patterns, Smooth texture, Geometric shapes, Layered composition, Bright hues, Organic forms
+o35: Circular shape, Bright color, Smooth surface, Abstract pattern, Central focus, Textured background
+o36: Circular shape, Vibrant colors, Textured surface, Central motif, Symmetrical design, Contrast elements, Glossy finish, Organic patterns
+o37: Circular shape, Bright colors, Textured surface, Central design, Geometric patterns, Symmetrical layout, Reflective elements
+o38: Circular shape, Dark color, Smooth surface, Textured rim, Bright highlights, Shadowed edges
+o39: Abstract design, Colorful patterns, Geometric shapes, Fluid lines, Organic forms, Vibrant colors, Dynamic composition
+o4: Circular shape, Bright colors, Smooth surface, Centrally located, Surrounded by greenery
+o40: Circular shape, Dark color, Smooth surface, Central core, Textured edges, Metallic sheen, Subtle glow
+o41: Green foliage, Curved structure, Textured surface, Organic shape, Natural setting
+o42: Round shape, Bright color, Smooth texture, Central core, Surrounding pattern
+o43: Abstract pattern, Colorful design, Geometric shapes, Gradient colors, Fluid lines, Dynamic composition
+o44: Circular shape, Metallic surface, Textured pattern, Central emblem, Glossy finish, Dimensional depth
+o45: Complex structure, Vibrant colors, Organic shapes, Textured surface, Layered elements, Natural lighting, Abstract patterns
+o46: Abstract design, Colorful patterns, Geometric shapes, Complex textures, Organic forms, Dynamic composition
+o47: Abstract design, Colorful elements, Geometric shapes, Dynamic patterns
+o48: Circular shape, Bright colors, Textured surface, Central structure, Surrounding foliage, Soft lighting
+o49: Abstract design, Colorful patterns, Geometric shapes, Dynamic composition, Intricate details, Organic forms, Layered textures, Vibrant hues
+o5: Circular shape, Bright colors, Smooth texture, Central pattern, Symmetrical design, Shadow effects, Glossy finish, Reflective surface
+o50: Smooth surface, Circular shape, Light color, Minimal texture, Central pattern, Subtle gradient, Glossy finish, Ambient lighting
+o6: Circular shape, Smooth surface
+o7: Circular shape, Dark color, Smooth surface, Minimal detail, Subtle gradient, Glossy texture
+o8: Circular shape, Dark color, Smooth surface, Central dot, Glossy finish, Subtle texture, Ambient lighting
+o9: Colorful, Abstract, Geometric, Curved, Dynamic, Textured, Multi-layered, Organic shapes

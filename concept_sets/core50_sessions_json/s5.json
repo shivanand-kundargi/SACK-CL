@@ -1,0 +1,98 @@
+{
+  "plug adapter": [
+    "White color",
+    "Plastic material",
+    "Multiple ports",
+    "Flat design",
+    "Rounded edges",
+    "Wall-mounted",
+    "Electrical symbols"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Compact size",
+    "Metallic frame",
+    "Colorful casing",
+    "Charging cable",
+    "Soft lighting",
+    "Desktop setting",
+    "Accessories nearby",
+    "Minimalist layout"
+  ],
+  "scissors": [],
+  "light bulb": [
+    "Round shape",
+    "Glass material",
+    "Bright light",
+    "Metal base",
+    "Warm glow",
+    "Ceiling fixture",
+    "Clear design"
+  ],
+  "can": [
+    "Cylindrical shape",
+    "Labels",
+    "Lid",
+    "Reflective",
+    "Shadows",
+    "Surrounding items"
+  ],
+  "glass": [
+    "Transparent",
+    "Smooth",
+    "Cylindrical",
+    "Clear",
+    "Reflective",
+    "Thin",
+    "Fragile",
+    "Glossy",
+    "Empty",
+    "Minimalistic"
+  ],
+  "ball": [
+    "Smooth",
+    "Colorful",
+    "Bouncy",
+    "Textured",
+    "Lightweight",
+    "Bright",
+    "Compact",
+    "Soft",
+    "Indoor setting"
+  ],
+  "marker": [
+    "Colorful",
+    "Cylindrical",
+    "Plastic",
+    "Cap",
+    "Ink",
+    "Stationery",
+    "Desk",
+    "Paper"
+  ],
+  "cup": [
+    "Ceramic",
+    "Handle",
+    "Glossy",
+    "Round",
+    "Colorful",
+    "Patterned",
+    "Filler",
+    "Tabletop",
+    "Light",
+    "Shadow"
+  ],
+  "remote control": [
+    "Compact",
+    "Black",
+    "Buttons",
+    "Sleek",
+    "Plastic",
+    "Ergonomic",
+    "Lightweight",
+    "Wireless",
+    "Screen",
+    "Cables"
+  ]
+}

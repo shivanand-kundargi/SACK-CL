@@ -1,0 +1,105 @@
+{
+  "plug adapter": [
+    "Compact design",
+    "Multiple ports",
+    "Plastic casing",
+    "Electrical prongs",
+    "Indoor setting",
+    "Neutral colors",
+    "Wall-mounted",
+    "Safety features"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Compact size",
+    "Buttons",
+    "Glass surface",
+    "Charging cable",
+    "Desk or table"
+  ],
+  "scissors": [
+    "Metal blades",
+    "Plastic handles",
+    "Sharp edges",
+    "Pivot point",
+    "Cutting mechanism",
+    "Indoor lighting",
+    "Work surface"
+  ],
+  "light bulb": [
+    "Round shape",
+    "Glass material",
+    "Metal base",
+    "Soft glow",
+    "Illuminated light",
+    "Suspended fixture",
+    "Warm color",
+    "Indoor setting"
+  ],
+  "can": [
+    "Cylindrical shape",
+    "Metal surface",
+    "Label design",
+    "Tab top",
+    "Glossy finish",
+    "Colorful graphics",
+    "Reflective texture",
+    "Shadow cast",
+    "Surface patterns"
+  ],
+  "glass": [
+    "Smooth",
+    "Cylindrical",
+    "Reflective",
+    "Clear",
+    "Light-catching",
+    "Fragile",
+    "Decorative",
+    "Filled (with liquid)",
+    "On table"
+  ],
+  "ball": [
+    "Round",
+    "Colorful",
+    "Smooth",
+    "Bouncy",
+    "Textured",
+    "Bright",
+    "Indoor setting"
+  ],
+  "marker": [
+    "Bright color",
+    "Small size",
+    "Pointed tip",
+    "Smooth surface",
+    "Inked markings",
+    "Plastic body",
+    "Cap or lid",
+    "Horizontal placement",
+    "Nearby paper",
+    "Desk surface"
+  ],
+  "cup": [
+    "Ceramic",
+    "Handle",
+    "Glossy",
+    "Round",
+    "Colorful",
+    "Textured",
+    "Filled",
+    "Tabletop"
+  ],
+  "remote control": [
+    "Buttons",
+    "Screen",
+    "Slim",
+    "Black",
+    "Plastic",
+    "Compact",
+    "Ergonomic",
+    "Wireless",
+    "Multicolored",
+    "Flat"
+  ]
+}

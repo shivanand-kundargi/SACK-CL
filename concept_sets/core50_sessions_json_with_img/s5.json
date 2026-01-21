@@ -1,0 +1,99 @@
+{
+  "plug adapter": [
+    "Compact",
+    "Rectangular",
+    "Plastic",
+    "Ports",
+    "Pins",
+    "Neutral colors",
+    "Electrical markings",
+    "Indoor setting"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Compact size",
+    "Metallic finish",
+    "Charging cable",
+    "Colorful case",
+    "Accessories nearby",
+    "Bright screen",
+    "Minimalistic layout",
+    "Modern aesthetic"
+  ],
+  "scissors": [
+    "Metal blades",
+    "Plastic handles",
+    "Sharp edges",
+    "Pivot point",
+    "Indoor setting",
+    "Work surface",
+    "Stationery item"
+  ],
+  "light bulb": [
+    "Glass bulb",
+    "Screw base",
+    "Bright illumination",
+    "Warm glow",
+    "Metallic fixture",
+    "Circular shape",
+    "Transparent",
+    "Ambient light"
+  ],
+  "can": [
+    "Metallic surface",
+    "Cylindrical shape",
+    "Labelled exterior",
+    "Lid on top",
+    "Reflective finish",
+    "Solid base",
+    "Bright colors",
+    "Shadows from lighting",
+    "Surrounded by kitchen items",
+    "Vertical orientation"
+  ],
+  "glass": [
+    "Transparent",
+    "Cylindrical",
+    "Smooth",
+    "Reflective",
+    "Clear",
+    "Empty",
+    "Base",
+    "Light-diffusing"
+  ],
+  "ball": [
+    "Round shape",
+    "Smooth surface",
+    "Bright color",
+    "Indoor lighting",
+    "Soft texture",
+    "Synthetic material",
+    "Bouncing ability",
+    "Centered placement"
+  ],
+  "marker": [
+    "Colorful",
+    "Cylindrical",
+    "Inked tip",
+    "Cap",
+    "Smooth surface",
+    "Stationary",
+    "Nearby paper",
+    "Writing surface",
+    "Desk clutter"
+  ],
+  "cup": [],
+  "remote control": [
+    "Buttons",
+    "Slim design",
+    "Plastic material",
+    "Dark color",
+    "Ergonomic shape",
+    "Screen/display",
+    "Wireless",
+    "Compact size",
+    "Text labels",
+    "Surrounding furniture"
+  ]
+}

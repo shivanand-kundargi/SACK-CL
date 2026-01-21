@@ -1,0 +1,751 @@
+{
+  "goldfish": [],
+  "great white shark": [
+    "-large size",
+    "large pectoral fins",
+    "pointed snout"
+  ],
+  "hammerhead shark": [
+    "greyish-brown color"
+  ],
+  "stingray": [
+    "-flattened body"
+  ],
+  "hen": [
+    "-feathers",
+    "beak",
+    "comb (on the head)",
+    "two legs"
+  ],
+  "ostrich": [
+    "-long neck",
+    "feather covered body",
+    "large size",
+    "long legs"
+  ],
+  "goldfinch": [
+    "-bright yellow body",
+    "a pointed beak",
+    "red face"
+  ],
+  "junco": [],
+  "bald eagle": [
+    "-brown body",
+    "a hooked beak",
+    "sharp talons",
+    "white head and tail"
+  ],
+  "vulture": [],
+  "newt": [],
+  "axolotl": [
+    "a broad, flat head",
+    "a long, slender body",
+    "small, stubby limbs"
+  ],
+  "tree frog": [
+    "-smooth, moist skin",
+    "bulging eyes"
+  ],
+  "iguana": [
+    "-scaly skin",
+    "four legs",
+    "long tail"
+  ],
+  "African chameleon": [],
+  "cobra": [
+    "-elongated body",
+    "forked tongue",
+    "scales"
+  ],
+  "scorpion": [
+    "a hard exoskeleton",
+    "eight legs"
+  ],
+  "tarantula": [
+    "-eight legs",
+    "hairy body"
+  ],
+  "centipede": [
+    "antennae"
+  ],
+  "peacock": [
+    "a crested head",
+    "strong legs"
+  ],
+  "lorikeet": [
+    "curved beak",
+    "short legs",
+    "small to medium size"
+  ],
+  "hummingbird": [
+    "-small size",
+    "hovering flight",
+    "long, slender beak"
+  ],
+  "toucan": [],
+  "duck": [
+    "-feathers",
+    "two legs",
+    "wings"
+  ],
+  "goose": [
+    "-feathers",
+    "long neck",
+    "webbed feet",
+    "wings"
+  ],
+  "black swan": [
+    "-black plumage",
+    "long, elegant neck",
+    "webbed feet"
+  ],
+  "koala": [
+    "-thick, gray fur",
+    "a small, black nose",
+    "a stout body",
+    "large, round ears"
+  ],
+  "jellyfish": [
+    "tentacles"
+  ],
+  "snail": [
+    "-a shell",
+    "a muscular foot",
+    "a soft body",
+    "slow movement"
+  ],
+  "lobster": [
+    "-a segmented body",
+    "a hard exoskeleton",
+    "long antennae",
+    "multiple legs",
+    "two large claws"
+  ],
+  "hermit crab": [],
+  "flamingo": [
+    "-pink feathers",
+    "a curved beak",
+    "long legs",
+    "long neck",
+    "webbed feet"
+  ],
+  "american egret": [
+    "-long, slender neck",
+    "all-white plumage",
+    "long, pointed bill",
+    "long, thin legs"
+  ],
+  "pelican": [
+    "large size",
+    "long beak",
+    "webbed feet"
+  ],
+  "king penguin": [
+    "-black back and head"
+  ],
+  "grey whale": [
+    "-Large size",
+    "Grey color",
+    "Two blowholes"
+  ],
+  "killer whale": [
+    "a streamlined shape"
+  ],
+  "sea lion": [
+    "-flippers",
+    "a visible neck",
+    "large eyes",
+    "streamlined body"
+  ],
+  "chihuahua": [
+    "-small size"
+  ],
+  "shih tzu": [
+    "-long, flowing coat",
+    "cocked ears",
+    "large, round eyes",
+    "short muzzle",
+    "small size"
+  ],
+  "afghan hound": [
+    "-long, silky coat",
+    "deep-chested body",
+    "long, drooping ears"
+  ],
+  "basset hound": [
+    "-long, floppy ears",
+    "long body",
+    "short legs"
+  ],
+  "beagle": [
+    "- floppy ears",
+    "medium-sized body",
+    "short legs"
+  ],
+  "bloodhound": [
+    "-long, floppy ears",
+    "a long snout",
+    "a wrinkled face"
+  ],
+  "italian greyhound": [
+    "-long, slender body",
+    "curved back",
+    "short coat",
+    "thin legs"
+  ],
+  "whippet": [
+    "deep chest",
+    "long legs",
+    "thin muzzle"
+  ],
+  "weimaraner": [
+    "a muscular build",
+    "long, elegant neck"
+  ],
+  "yorkshire terrier": [
+    "-small size",
+    "long, flowing coat",
+    "small, erect ears"
+  ],
+  "boston terrier": [
+    "erect, bat-like ears",
+    "large, round eyes",
+    "short, smooth coat"
+  ],
+  "scottish terrier": [
+    "-short legs",
+    "dark eyes",
+    "long, wiry fur"
+  ],
+  "west highland white terrier": [
+    "-white fur",
+    "short legs"
+  ],
+  "golden retriever": [
+    "-long, golden fur",
+    "fluffy tail",
+    "medium to large size"
+  ],
+  "labrador retriever": [
+    "a short, dense coat"
+  ],
+  "cocker spaniels": [
+    "-floppy ears",
+    "a sturdy build",
+    "medium length coat"
+  ],
+  "collie": [
+    "-long, fluffy coat",
+    "medium to large size",
+    "pointed snout"
+  ],
+  "border collie": [],
+  "rottweiler": [
+    "-a muscular build",
+    "a broad head",
+    "a short, coarse coat",
+    "a strong jaw"
+  ],
+  "german shepherd dog": [
+    "-pointed ears",
+    "long snout",
+    "medium to large size",
+    "medium to long coat",
+    "powerful build"
+  ],
+  "boxer": [
+    "gloved hands",
+    "shorts"
+  ],
+  "french bulldog": [
+    "a broad, square head",
+    "a short, stubby tail",
+    "bat-like ears"
+  ],
+  "saint bernard": [
+    "-large size",
+    "droopy face/jowels",
+    "long, shaggy coat"
+  ],
+  "husky": [
+    "pointed ears"
+  ],
+  "dalmatian": [
+    "medium-sized dog",
+    "short, stiff coat"
+  ],
+  "pug": [
+    "compact, square body",
+    "curled tail",
+    "short legs"
+  ],
+  "pomeranian": [],
+  "chow chow": [
+    "a short, stubby tail"
+  ],
+  "pembroke welsh corgi": [
+    "-short legs",
+    "fluffy tail",
+    "fox-like face",
+    "long body",
+    "prick ears"
+  ],
+  "toy poodle": [
+    "small size"
+  ],
+  "standard poodle": [
+    "-long, curly coat",
+    "a bushy tail",
+    "long, elegant neck",
+    "tall, lean body"
+  ],
+  "timber wolf": [
+    "-thick, gray fur",
+    "bushy tail",
+    "pointed ears",
+    "powerful legs"
+  ],
+  "hyena": [
+    "-four legs",
+    "pointed ears",
+    "powerful jaws"
+  ],
+  "red fox": [
+    "-reddish-orange fur",
+    "bushy tail",
+    "pointed ears",
+    "sharp snout",
+    "slender body"
+  ],
+  "tabby cat": [
+    "pointed ears",
+    "whiskers"
+  ],
+  "leopard": [
+    "long tail",
+    "muscular, agile body"
+  ],
+  "snow leopard": [
+    "long tail",
+    "powerful legs"
+  ],
+  "lion": [
+    "a powerful tail"
+  ],
+  "tiger": [
+    "a long tail",
+    "a muscular body"
+  ],
+  "cheetah": [
+    "-spotted coat",
+    "long, slender body",
+    "small head"
+  ],
+  "polar bear": [
+    "-thick white fur",
+    "large paws",
+    "large size",
+    "powerful build",
+    "small ears"
+  ],
+  "meerkat": [
+    "-long, slender body",
+    "pointed snout",
+    "short legs",
+    "upright posture"
+  ],
+  "ladybug": [
+    "-a round body",
+    "six legs"
+  ],
+  "fly": [
+    "-six legs",
+    "a small body"
+  ],
+  "bee": [
+    "-six legs",
+    "fuzzy body",
+    "two pairs of wings"
+  ],
+  "ant": [
+    "-six legs"
+  ],
+  "grasshopper": [
+    "-six legs",
+    "jumping ability",
+    "long antennae",
+    "segmented body"
+  ],
+  "cockroach": [
+    "-six legs",
+    "flattened body",
+    "long antennae"
+  ],
+  "mantis": [
+    "elongated body",
+    "long antennae"
+  ],
+  "dragonfly": [
+    "six legs"
+  ],
+  "monarch butterfly": [],
+  "starfish": [
+    "star-like shape"
+  ],
+  "wood_rabbit": [],
+  "porcupine": [
+    "-covered in quills",
+    "a rodent-like body",
+    "short legs",
+    "small ears"
+  ],
+  "fox squirrel": [
+    "-bushy tail",
+    "white underparts"
+  ],
+  "beaver": [
+    "-large, flat tail",
+    "small ears",
+    "strong teeth",
+    "webbed feet"
+  ],
+  "guinea pig": [
+    "-short, stocky body",
+    "small, rounded ears"
+  ],
+  "zebra": [
+    "horse-like body"
+  ],
+  "pig": [
+    "-four legs",
+    "curly tail",
+    "short snout"
+  ],
+  "hippopotamus": [
+    "-massive size",
+    "large mouth",
+    "short legs"
+  ],
+  "bison": [
+    "-large size",
+    "curved horns",
+    "thick, shaggy coat"
+  ],
+  "gazelle": [
+    "-long, slender legs"
+  ],
+  "llama": [
+    "-long neck",
+    "four legs",
+    "hooved feet",
+    "long, fluffy fleece"
+  ],
+  "skunk": [
+    "-black and white fur",
+    "a bushy tail"
+  ],
+  "badger": [
+    "-short legs",
+    "long body",
+    "small, pointed ears"
+  ],
+  "orangutan": [
+    "-long arms",
+    "lack of a tail",
+    "large size",
+    "reddish-brown fur"
+  ],
+  "gorilla": [
+    "-large size",
+    "dark hair",
+    "no tail",
+    "powerful build"
+  ],
+  "chimpanzee": [
+    "has long arms"
+  ],
+  "gibbon": [
+    "-long arms",
+    "lack of a tail"
+  ],
+  "baboon": [
+    "-thick, coarse fur",
+    "large canine teeth",
+    "powerful limbs"
+  ],
+  "panda": [
+    "-black and white fur",
+    "a large, round body",
+    "round ears"
+  ],
+  "eel": [
+    "-long, slender body",
+    "lack of pelvic fins"
+  ],
+  "clown fish": [
+    "small size"
+  ],
+  "puffer fish": [],
+  "accordion": [
+    "a box-like structure"
+  ],
+  "ambulance": [
+    "a siren"
+  ],
+  "assault rifle": [],
+  "backpack": [
+    "-two straps"
+  ],
+  "barn": [],
+  "wheelbarrow": [],
+  "basketball": [
+    "-a round shape"
+  ],
+  "bathtub": [],
+  "lighthouse": [],
+  "beer glass": [],
+  "binoculars": [],
+  "birdhouse": [
+    "-a roof"
+  ],
+  "bow tie": [
+    "-a symmetrical shape",
+    "two loops"
+  ],
+  "broom": [
+    "-a long handle",
+    "bristles at one end"
+  ],
+  "bucket": [
+    "an open top"
+  ],
+  "cauldron": [],
+  "candle": [
+    "a wick at the top"
+  ],
+  "cannon": [],
+  "canoe": [
+    "-long, narrow hull",
+    "open top",
+    "pointed ends"
+  ],
+  "carousel": [
+    "a central pole"
+  ],
+  "castle": [
+    "towers"
+  ],
+  "mobile phone": [
+    "-a rectangular shape",
+    "a screen (display)"
+  ],
+  "cowboy hat": [
+    "-a wide brim"
+  ],
+  "electric guitar": [
+    "-six strings",
+    "a long neck"
+  ],
+  "fire engine": [
+    "-bright red color",
+    "a large size",
+    "flashing lights",
+    "loud siren"
+  ],
+  "flute": [
+    "a cylindrical shape",
+    "holes along the body"
+  ],
+  "gasmask": [
+    "-a sealed face mask"
+  ],
+  "grand piano": [
+    "-large size",
+    "a keyboard",
+    "pedals"
+  ],
+  "guillotine": [],
+  "hammer": [
+    "-a heavy head",
+    "a long handle"
+  ],
+  "harmonica": [],
+  "harp": [
+    "-a triangular frame"
+  ],
+  "hatchet": [
+    "-a sharp blade",
+    "a handle"
+  ],
+  "jeep": [
+    "-four wheels",
+    "boxy body style"
+  ],
+  "joystick": [
+    "-a stick-like shape",
+    "a base for support"
+  ],
+  "lab coat": [
+    "-long sleeves",
+    "buttoned front"
+  ],
+  "lawn mower": [
+    "wheels or rollers"
+  ],
+  "lipstick": [
+    "-a cylindrical shape",
+    "a cap on one end"
+  ],
+  "mailbox": [],
+  "missile": [
+    "pointed nose cone"
+  ],
+  "mitten": [],
+  "parachute": [
+    "-a large canopy",
+    "suspension lines"
+  ],
+  "pickup truck": [
+    "four wheels"
+  ],
+  "pirate ship": [
+    "a large hull",
+    "cannons"
+  ],
+  "revolver": [
+    "a barrel",
+    "a grip or handle"
+  ],
+  "rugby_ball": [
+    "-oval shape"
+  ],
+  "sandal": [],
+  "saxophone": [
+    "a bell (wide end)",
+    "a mouthpiece",
+    "keys"
+  ],
+  "school_bus": [
+    "-bright yellow color",
+    "large size",
+    "rectangular shape",
+    "stop sign arm"
+  ],
+  "schooner": [],
+  "shield": [],
+  "soccer ball": [
+    "-spherical shape"
+  ],
+  "space shuttle": [
+    "-large size",
+    "heat shield",
+    "winged body"
+  ],
+  "spider web": [
+    "sticky threads"
+  ],
+  "steam locomotive": [
+    "-a large boiler",
+    "a smokestack"
+  ],
+  "scarf": [
+    "-a long, thin shape",
+    "made of fabric",
+    "worn around the neck"
+  ],
+  "submarine": [],
+  "tank": [],
+  "tennis ball": [
+    "-a fuzzy surface",
+    "a round shape"
+  ],
+  "tractor": [
+    "-four wheels",
+    "a large body"
+  ],
+  "trombone": [
+    "valves (usually 3)"
+  ],
+  "vase": [
+    "-a wide, open top",
+    "a narrow base"
+  ],
+  "violin": [
+    "a bridge"
+  ],
+  "military aircraft": [],
+  "wine bottle": [
+    "a bulbous body",
+    "a label (usually)"
+  ],
+  "ice cream": [],
+  "bagel": [
+    "-doughy texture",
+    "ring shape"
+  ],
+  "pretzel": [
+    "-knotted shape",
+    "brown color"
+  ],
+  "cheeseburger": [
+    "-a ground beef patty"
+  ],
+  "hotdog": [],
+  "cabbage": [
+    "-large, round head"
+  ],
+  "broccoli": [
+    "-green color"
+  ],
+  "cucumber": [
+    "smooth skin"
+  ],
+  "bell pepper": [
+    "-a bell-like shape",
+    "a smooth skin",
+    "thick, fleshy walls"
+  ],
+  "mushroom": [
+    "-a cap on a stem"
+  ],
+  "Granny_Smith": [
+    "-round shape",
+    "green color"
+  ],
+  "strawberry": [
+    "-red color"
+  ],
+  "lemon": [
+    "-yellow color",
+    "oval shape",
+    "rough, bumpy texture"
+  ],
+  "pineapple": [
+    "a cylindrical shape"
+  ],
+  "banana": [],
+  "pomegranate": [
+    "-a round shape",
+    "many seeds inside"
+  ],
+  "pizza": [
+    "-a flat, round crust"
+  ],
+  "burrito": [],
+  "espresso": [
+    "-dark brown color",
+    "strong aroma"
+  ],
+  "volcano": [
+    "-a conical shape"
+  ],
+  "baseball player": [],
+  "scuba diver": [
+    "a mask",
+    "fins (on their feet)"
+  ],
+  "acorn": [
+    "-a hard, woody shell",
+    "a single seed inside"
+  ]
+}

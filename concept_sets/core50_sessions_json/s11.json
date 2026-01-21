@@ -1,0 +1,107 @@
+{
+  "plug adapter": [
+    "Rectangular",
+    "Plastic",
+    "Multi-port",
+    "White",
+    "Wall-mounted",
+    "Smooth",
+    "Electrical pins",
+    "Indicator light",
+    "Cables"
+  ],
+  "mobile phone": [
+    "touchscreen",
+    "compact size",
+    "metallic finish",
+    "colorful case",
+    "charging cable",
+    "illuminated screen",
+    "small accessories",
+    "desk placement",
+    "ambient lighting"
+  ],
+  "scissors": [
+    "Plastic handles",
+    "Sharp edges",
+    "Compact size",
+    "Ergonomic design",
+    "Colorful grips",
+    "Office setting",
+    "Desk accessories"
+  ],
+  "light bulb": [
+    "Bright",
+    "Round",
+    "Glass",
+    "Filament",
+    "Warm light",
+    "Ceiling-mounted",
+    "Pendant",
+    "White shade",
+    "Illuminated"
+  ],
+  "can": [
+    "Metallic surface",
+    "Cylindrical shape",
+    "Smooth texture",
+    "Label design",
+    "Lid presence",
+    "Reflective surface",
+    "Colorful branding",
+    "Shadow casting"
+  ],
+  "glass": [
+    "Transparent",
+    "Cylindrical",
+    "Smooth",
+    "Reflective",
+    "Clear",
+    "Fragile",
+    "Thin",
+    "Elegant",
+    "Minimalistic",
+    "Filled (if applicable)"
+  ],
+  "ball": [
+    "Round",
+    "Colorful",
+    "Smooth",
+    "Bouncy",
+    "Bright",
+    "Sized",
+    "Textured",
+    "Lightweight",
+    "Plastic",
+    "Soft"
+  ],
+  "marker": [
+    "Colorful",
+    "Cylindrical",
+    "Cap",
+    "Ink",
+    "Flat tip",
+    "Desk placement",
+    "Paper nearby",
+    "Bright light"
+  ],
+  "cup": [
+    "glossy, smooth",
+    "colorful, patterned",
+    "filled, empty",
+    "nearby, table",
+    "warm, cozy"
+  ],
+  "remote control": [
+    "Button layout",
+    "Slim design",
+    "Black color",
+    "Plastic material",
+    "Minimalistic style",
+    "LED indicator",
+    "Ergonomic shape",
+    "Compact size",
+    "Smooth surface",
+    "Wireless functionality"
+  ]
+}

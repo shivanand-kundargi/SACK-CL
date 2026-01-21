@@ -1,0 +1,105 @@
+{
+  "plug adapter": [
+    "Compact design",
+    "Multiple ports",
+    "Plastic material",
+    "White color",
+    "Wall-mounted",
+    "Electrical contacts",
+    "Indicator light",
+    "Safety features"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Compact size",
+    "Rounded edges",
+    "Colorful casing",
+    "Button layout",
+    "Charging cable",
+    "Desk surface",
+    "Soft lighting"
+  ],
+  "scissors": [
+    "Metal blades",
+    "Plastic handles",
+    "Sharp edges",
+    "Pivot point",
+    "Ergonomic design",
+    "Colorful grips",
+    "Tabletop placement",
+    "Nearby paper"
+  ],
+  "light bulb": [
+    "Glass bulb",
+    "Filament",
+    "Metal base",
+    "Light source",
+    "Warm glow",
+    "Ceiling fixture",
+    "Brightness",
+    "Circular shape"
+  ],
+  "can": [
+    "Metallic surface",
+    "Cylindrical shape",
+    "Label design",
+    "Lid presence",
+    "Reflective finish",
+    "Colorful graphics",
+    "Brand logo",
+    "Shadow casting",
+    "Tabletop placement",
+    "Nearby objects"
+  ],
+  "glass": [
+    "Transparent",
+    "Cylindrical",
+    "Smooth",
+    "Reflective",
+    "Clear",
+    "Colorless",
+    "Decorative",
+    "Inverted"
+  ],
+  "ball": [
+    "Round shape",
+    "Smooth surface",
+    "Bright color",
+    "Lightweight",
+    "Soft texture",
+    "Indoor lighting",
+    "Flat surface"
+  ],
+  "marker": [
+    "Colorful",
+    "Cylindrical",
+    "Cap",
+    "Ink",
+    "Surface",
+    "Portable",
+    "Label",
+    "Writing"
+  ],
+  "cup": [
+    "Ceramic",
+    "Handle",
+    "Glossy",
+    "Round",
+    "Colorful",
+    "Filled",
+    "Tabletop",
+    "Light reflection"
+  ],
+  "remote control": [
+    "Buttons",
+    "Slim design",
+    "Black color",
+    "Glossy finish",
+    "Ergonomic shape",
+    "LED indicator",
+    "Text labels",
+    "Compact size",
+    "Plastic material"
+  ]
+}

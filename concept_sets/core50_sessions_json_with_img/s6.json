@@ -1,0 +1,106 @@
+{
+  "plug adapter": [
+    "Compact design",
+    "Multiple ports",
+    "Plastic material",
+    "White color",
+    "Wall-mounted",
+    "Electrical contacts",
+    "Minimalist style",
+    "Indoor use"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Compact size",
+    "Metallic frame",
+    "Bright screen",
+    "Fingerprint scanner",
+    "Charging cable",
+    "Case cover",
+    "App icons",
+    "Ambient lighting"
+  ],
+  "scissors": [
+    "Metal blades",
+    "Plastic handles",
+    "Sharp edges",
+    "Pivot point",
+    "Ergonomic design",
+    "Colorful grips",
+    "Compact size",
+    "Smooth finish"
+  ],
+  "light bulb": [
+    "Glass sphere",
+    "Bright light",
+    "Metal base",
+    "Warm glow",
+    "Ceiling fixture",
+    "Pendant light",
+    "Illuminated space"
+  ],
+  "can": [
+    "Cylindrical shape",
+    "Metal surface",
+    "Labelled side",
+    "Opened top",
+    "Reflected light",
+    "Solid base",
+    "Nearby objects",
+    "Colorful design",
+    "Textured surface"
+  ],
+  "glass": [
+    "Transparent",
+    "Smooth",
+    "Cylindrical",
+    "Reflective",
+    "Clear",
+    "Fragile",
+    "Decorative",
+    "Full (if containing liquid)"
+  ],
+  "ball": [
+    "Round",
+    "Smooth",
+    "Bright color",
+    "Bouncing",
+    "Textured surface",
+    "Indoor lighting",
+    "Shadow"
+  ],
+  "marker": [
+    "Bright color",
+    "Circular shape",
+    "Smooth surface",
+    "Upright position",
+    "Visible ink",
+    "Flat base",
+    "Portable size",
+    "Proximity to paper"
+  ],
+  "cup": [
+    "Ceramic",
+    "Glossy",
+    "Handle",
+    "Round",
+    "Colorful",
+    "Textured",
+    "Decorative",
+    "Placed on table",
+    "Liquid-filled"  ],
+    
+  "remote control": [
+    "Buttons",
+    "Slim design",
+    "Black color",
+    "Plastic material",
+    "Screen",
+    "Ergonomic shape",
+    "Wireless",
+    "Compact size",
+    "Multicolor buttons",
+    "Text labels"
+  ]
+}

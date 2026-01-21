@@ -1,0 +1,105 @@
+{
+  "plug adapter": [
+    "Compact design",
+    "Multiple ports",
+    "Plastic casing",
+    "Electrical prongs",
+    "Indicator light",
+    "Neutral color"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Compact size",
+    "Metallic frame",
+    "Colorful case",
+    "Charging cable",
+    "Accessories nearby",
+    "Minimalist aesthetic"
+  ],
+  "scissors": [
+    "Metal blades",
+    "Plastic handles",
+    "Sharp edges",
+    "Pivot point",
+    "Compact design",
+    "Colorful accents",
+    "Flat surface",
+    "Work desk"
+  ],
+  "light bulb": [
+    "Bright",
+    "Glass",
+    "Round",
+    "Illuminated",
+    "Ceiling-mounted",
+    "Warm light",
+    "Fixture",
+    "Metal base"
+  ],
+  "can": [
+    "Cylindrical shape",
+    "Metallic surface",
+    "Label design",
+    "Lid or cap",
+    "Reflective finish",
+    "Shadows and highlights",
+    "Surrounding clutter"
+  ],
+  "glass": [
+    "Transparent",
+    "Cylindrical",
+    "Smooth",
+    "Reflective",
+    "Clear",
+    "Thin",
+    "Fragile",
+    "Glossy",
+    "Decorated",
+    "Filled"
+  ],
+  "ball": [
+    "Round shape",
+    "Smooth surface",
+    "Bright color",
+    "Soft texture",
+    "Indoor lighting",
+    "Hard floor",
+    "Obstacle-free space",
+    "Bouncing potential"
+  ],
+  "marker": [
+    "Colorful",
+    "Cylindrical",
+    "Cap",
+    "Ink",
+    "Flat tip",
+    "Stationery",
+    "Writing surface",
+    "Container",
+    "Workspace",
+    "Organized"
+  ],
+  "cup": [
+    "Ceramic",
+    "Handle",
+    "Glossy",
+    "Round",
+    "Colorful",
+    "Saucer",
+    "Steam",
+    "Tabletop"
+  ],
+  "remote control": [
+    "Black color",
+    "Buttons",
+    "Slim design",
+    "Plastic material",
+    "Digital display",
+    "Ergonomic shape",
+    "Multi-functional",
+    "Wireless",
+    "Textured grip",
+    "Compact size"
+  ]
+}

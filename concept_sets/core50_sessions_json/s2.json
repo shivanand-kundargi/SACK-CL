@@ -1,0 +1,98 @@
+{
+  "plug adapter": [
+    "Compact",
+    "Rectangular",
+    "Plastic",
+    "Ports",
+    "Cords",
+    "Wall-mounted",
+    "Neutral color",
+    "Minimalist"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen",
+    "Compact size",
+    "Metallic finish",
+    "Colorful case",
+    "Charging cable",
+    "Desktop surface",
+    "Ambient lighting"
+  ],
+  "scissors": [
+    "plastic handles",
+    "sharp tips",
+    "ergonomic design",
+    "glossy finish",
+    "compact size",
+    "workspace setting",
+    "cutting edge",
+    "pointed ends"
+  ],
+  "light bulb": [
+    "Glass exterior",
+    "Bright illumination",
+    "Circular shape",
+    "Filament visible",
+    "Metal base",
+    "Warm glow",
+    "Ceiling fixture",
+    "Clear shade",
+    "Modern design",
+    "Soft light"
+  ],
+  "can": [
+    "Cylindrical shape",
+    "Label design",
+    "Lid presence",
+    "Reflective texture",
+    "Shadow cast",
+    "Color contrast",
+    "Ambient lighting"
+  ],
+  "glass": [
+    "Cylindrical",
+    "Smooth",
+    "Reflective",
+    "Clear",
+    "Empty",
+    "Lightweight",
+    "Glossy"
+  ],
+  "ball": [
+    "Round",
+    "Smooth",
+    "Colorful",
+    "Bouncing",
+    "Bright",
+    "Textured",
+    "Soft",
+    "Patterned",
+    "Lightweight",
+    "Plastic"
+  ],
+  "marker": [
+    "Colorful cap",
+    "Cylindrical shape",
+    "Ink reservoir",
+    "Smooth surface",
+    "Plastic body",
+    "Fine tip",
+    "Nearby paper",
+    "Writing surface",
+    "Stationery items"
+  ],
+  "cup": [],
+  "remote control": [
+    "Black color",
+    "Button layout",
+    "Slim design",
+    "Glossy finish",
+    "LED indicator",
+    "Ergonomic shape",
+    "Compact size",
+    "Text labels",
+    "Plastic material",
+    "Wireless design"
+  ]
+}

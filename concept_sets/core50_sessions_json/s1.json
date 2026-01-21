@@ -1,0 +1,108 @@
+{
+  "plug adapter": [
+    "Compact",
+    "Rectangular",
+    "Plastic",
+    "Ports",
+    "Prongs",
+    "Cable",
+    "Wall-mounted",
+    "Neutral colors"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Compact size",
+    "Glossy surface",
+    "Colorful case",
+    "Minimalist interface",
+    "Charging cable",
+    "Nearby table",
+    "Ambient lighting"
+  ],
+  "scissors": [
+    "plastic handles",
+    "sharp edges",
+    "ergonomic grip",
+    "shiny finish",
+    "compact size",
+    "stationary base",
+    "nearby paper",
+    "cutting surface"
+  ],
+  "light bulb": [
+    "Round shape",
+    "Glass material",
+    "Bright light",
+    "Metal base",
+    "Warm glow",
+    "Suspended fixture",
+    "Clear surface",
+    "Electric wiring"
+  ],
+  "can": [
+    "Cylindrical shape",
+    "Label design",
+    "Smooth surface",
+    "Reflective texture",
+    "Color variation",
+    "Flat top",
+    "Bottom base",
+    "Environmental clutter",
+    "Light shadows"
+  ],
+  "glass": [
+    "Smooth",
+    "Cylindrical",
+    "Reflective",
+    "Clear",
+    "Fragile",
+    "Simple",
+    "Decorative",
+    "Filled",
+    "Tabletop"
+  ],
+  "ball": [
+    "Round",
+    "Smooth",
+    "Colorful",
+    "Bouncy",
+    "Textured",
+    "Lightweight",
+    "Bright",
+    "Patterned",
+    "Compact",
+    "Soft"
+  ],
+  "marker": [
+    "Cylindrical shape",
+    "Bright color",
+    "Cap presence",
+    "Ink tip",
+    "Smooth surface",
+    "Plastic body",
+    "Desk placement",
+    "Nearby paper"
+  ],
+  "cup": [
+    "Round shape",
+    "Handle presence",
+    "Glossy finish",
+    "Colorful design",
+    "Table placement",
+    "Coffee contents",
+    "Steam rising"
+  ],
+  "remote control": [
+    "Black",
+    "Buttons",
+    "Slim",
+    "Plastic",
+    "Ergonomic",
+    "Wireless",
+    "Compact",
+    "Screen",
+    "Cable (if present)",
+    "Couch (surrounding)"
+  ]
+}

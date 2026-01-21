@@ -1,0 +1,92 @@
+{
+  "plug adapter": [
+    "Multiple ports",
+    "Plastic casing",
+    "Colorful finishes",
+    "Flat profile",
+    "Non-slip grip",
+    "Cable management",
+    "Indicator light"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen",
+    "Compact size",
+    "Glass surface",
+    "Colorful case",
+    "Minimalist layout",
+    "Charging cable",
+    "Desk setup",
+    "Ambient lighting",
+    "Nearby accessories"
+  ],
+  "scissors": [
+    "sharp",
+    "handle",
+    "blades",
+    "compact",
+    "ergonomic",
+    "workspace"
+  ],
+  "light bulb": [
+    "Bright",
+    "Glass",
+    "Round",
+    "Filament",
+    "Base",
+    "Warm",
+    "Suspended",
+    "Fixture"
+  ],
+  "can": [
+    "cylindrical",
+    "shiny",
+    "labeled",
+    "upright",
+    "textured",
+    "reflective",
+    "colorful",
+    "placed",
+    "surrounded"
+  ],
+  "glass": [
+    "Cylindrical",
+    "Smooth",
+    "Reflective",
+    "Clear",
+    "Fragile",
+    "Tall",
+    "Base",
+    "Filled (optional)",
+    "Tabletop"
+  ],
+  "ball": [
+    "Round",
+    "Smooth",
+    "Colorful",
+    "Bouncy",
+    "Textured",
+    "Lightweight",
+    "Bright"
+  ],
+  "marker": [
+    "Cylindrical shape",
+    "Colorful cap",
+    "Ink reservoir",
+    "Felt tip",
+    "Smooth surface",
+    "Desk setting",
+    "Paper nearby",
+    "Stationery group"
+  ],
+  "cup": [],
+  "remote control": [
+    "Black plastic",
+    "Button layout",
+    "Slim profile",
+    "LED indicator",
+    "Ergonomic shape",
+    "Cable-free",
+    "Indoor setting"
+  ]
+}

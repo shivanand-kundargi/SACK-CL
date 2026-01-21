@@ -1,0 +1,101 @@
+{
+  "plug adapter": [
+    "Weatherproof",
+    "Compact",
+    "Durable",
+    "Multi-port",
+    "Textured",
+    "Bright color",
+    "Lightweight",
+    "Portable"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Bright colors",
+    "Lightweight",
+    "Glossy finish",
+    "Sun glare",
+    "Compact size",
+    "Textured case",
+    "Portable",
+    "Shadow casting"
+  ],
+  "scissors": [
+    "sharp edges",
+    "plastic handles",
+    "green grass",
+    "sunlight reflections",
+    "dirt background",
+    "open position"
+  ],
+  "light bulb": [
+    "Round shape",
+    "Glass material",
+    "Bright glow",
+    "Metal base",
+    "Hanging fixture",
+    "Garden setting",
+    "Soft light",
+    "Warm color"
+  ],
+  "can": [
+    "Metallic",
+    "Cylindrical",
+    "Reflective",
+    "Weathered",
+    "Rusted",
+    "Colorful",
+    "Littered",
+    "Abandoned",
+    "Sunlit",
+    "Shadowed"
+  ],
+  "glass": [
+    "Reflective",
+    "Tall",
+    "Slim",
+    "Colorless",
+    "Shiny",
+    "Sunlit",
+    "Surrounded by nature"
+  ],
+  "ball": [
+    "Round",
+    "Colorful",
+    "Smooth",
+    "Bouncing",
+    "Grass",
+    "Sunlight",
+    "Shadow"
+  ],
+  "marker": [
+    "Bright color",
+    "Tall structure",
+    "Round tip",
+    "Smooth surface",
+    "Weathered texture",
+    "Grass surroundings",
+    "Sunlight reflection"
+  ],
+  "cup": [
+    "Colorful, Patterned",
+    "Tall, Slim",
+    "Glassy, Reflective",
+    "Rustic, Textured",
+    "Sunlit, Shadowed",
+    "Nature, Greenery"
+  ],
+  "remote control": [
+    "Weather-resistant",
+    "Compact design",
+    "Ergonomic shape",
+    "Buttons visible",
+    "Dark color",
+    "Textured grip",
+    "Lightweight",
+    "Portable size",
+    "Cable-free",
+    "Outdoor setting"
+  ]
+}

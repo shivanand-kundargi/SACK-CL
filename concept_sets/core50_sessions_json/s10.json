@@ -1,0 +1,103 @@
+{
+  "plug adapter": [
+    "Compact",
+    "Durable",
+    "Textured",
+    "Portable",
+    "Bright-colored",
+    "Multi-socket",
+    "Rugged",
+    "Corded",
+    "Outdoor-friendly"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Bright colors",
+    "Lightweight",
+    "Compact size",
+    "Glossy finish",
+    "Side buttons",
+    "Sunlight reflection",
+    "Textured case",
+    "Landscape orientation"
+  ],
+  "scissors": [
+    "Metal blades",
+    "Plastic handles",
+    "Sharp edges",
+    "Rust spots",
+    "Wooden table",
+    "Grass background",
+    "Sunlight reflections"
+  ],
+  "light bulb": [
+    "Transparent glass",
+    "Bright glow",
+    "Metallic base",
+    "Suspended fixture",
+    "Greenery backdrop",
+    "Night setting"
+  ],
+  "can": [
+    "Metallic surface",
+    "Circular shape",
+    "Smooth texture",
+    "Rust spots",
+    "Green grass",
+    "Dirt ground",
+    "Sunlight reflections",
+    "Shadows"
+  ],
+  "glass": [
+    "Transparent",
+    "Reflective",
+    "Smooth",
+    "Tall",
+    "Cylindrical",
+    "Clear",
+    "Shiny",
+    "Sunlit",
+    "Surrounded by greenery",
+    "Water-filled"
+  ],
+  "ball": [
+    "Round",
+    "Colorful",
+    "Bouncing",
+    "Grass",
+    "Sunlight",
+    "Shadow"
+  ],
+  "marker": [
+    "Cylindrical",
+    "Portable",
+    "Bright",
+    "Textured",
+    "Durable",
+    "Weather-resistant",
+    "Vertical",
+    "Graffiti",
+    "Natural elements"
+  ],
+  "cup": [
+    "Ceramic",
+    "Handle",
+    "Colorful",
+    "Textured",
+    "Sunlit",
+    "Grass",
+    "Tabletop",
+    "Nature-inspired"
+  ],
+  "remote control": [
+    "Compact size",
+    "Button layout",
+    "Bright colors",
+    "Ergonomic shape",
+    "Textured surface",
+    "Portable frame",
+    "Durable materials",
+    "Outdoor setting"
+  ]
+}

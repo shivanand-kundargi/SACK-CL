@@ -1,0 +1,103 @@
+{
+  "plug adapter": [
+    "Weatherproof",
+    "Compact",
+    "Durable",
+    "Portable",
+    "Rugged",
+    "Waterproof",
+    "Lightweight",
+    "Bright color",
+    "Textured surface",
+    "Cable management"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Bright screen",
+    "Compact size",
+    "Durable casing",
+    "Shadowed surface",
+    "Reflections",
+    "Outdoor backdrop"
+  ],
+  "scissors": [
+    "Plastic handles",
+    "Sharp edges",
+    "Green grass",
+    "Brown soil",
+    "Sunlight reflections",
+    "Nearby flowers"
+  ],
+  "light bulb": [
+    "Transparent glass",
+    "Metallic base",
+    "Bright glow",
+    "Hanging fixture",
+    "Outdoor setting",
+    "Electrical wiring",
+    "Warm light"
+  ],
+  "can": [
+    "Metallic",
+    "Cylindrical",
+    "Reflective",
+    "Colorful",
+    "Rusty",
+    "Weathered",
+    "Littered",
+    "Organic surroundings"
+  ],
+  "glass": [
+    "Reflective",
+    "Smooth",
+    "Tall",
+    "Clear",
+    "Fragile",
+    "Sunlit",
+    "Surrounded by greenery",
+    "Outdoor setting",
+    "Water-filled"
+  ],
+  "ball": [
+    "Round",
+    "Colorful",
+    "Bouncy",
+    "Textured",
+    "Bright",
+    "Grass",
+    "Sky",
+    "Sunlight"
+  ],
+  "marker": [
+    "Cylindrical",
+    "Bright",
+    "Tall",
+    "Plastic",
+    "Pointed",
+    "Weathered",
+    "Visible",
+    "Graffiti",
+    "Natural surroundings"
+  ],
+  "cup": [
+    "colorful, patterned",
+    "textured, insulated",
+    "sunlight, grass",
+    "wooden, table",
+    "nature, backdrop",
+    "filled, steaming",
+    "portable, lightweight"
+  ],
+  "remote control": [
+    "Weatherproof",
+    "Compact",
+    "Ergonomic",
+    "Textured",
+    "Portable",
+    "Button layout",
+    "Durable material",
+    "Sunlight reflection",
+    "Outdoor colors",
+    "Non-slip grip"
+  ]
+}

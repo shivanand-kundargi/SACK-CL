@@ -1,0 +1,800 @@
+Sunlit
+Shiny
+Harvested
+Stem
+Dew
+Shadow
+Table
+Half
+Polished
+Skin
+Dirt
+Waxy
+Basket
+Branch
+Flesh
+Bruised
+Sliced
+Leaf
+Smooth
+Striped
+Seeds
+Red
+Round
+Core
+Orchard
+Yellow
+Green
+Speckled
+Bite-mark
+Small-mouthed
+Shiny
+Flat
+Tail shape
+Longfin
+Rocks
+Shortfin
+Fins (dorsal, caudal, etc.)
+Scales
+Big-eyed
+Bubbles
+Colorful
+Water clarity
+Striped
+Dull
+Round
+Translucent
+Lighting
+Gills
+Spotted
+Decor
+Body shape
+Plants
+Gravel
+**Pajama print**
+**Small hands**
+**Rosy lips**
+**Blanket wrap**
+**Mobile above**
+**Gummy smile**
+**Big eyes**
+**Closed eyes**
+**Tiny nose**
+**Crib bars**
+**Pale skin**
+**Diaper bulge**
+**Drool bib**
+**Newborn fuzz**
+**Baby fat**
+**Soft skin**
+**Soft toy**
+**Fluffy hair**
+**Dimpled chin**
+**Chubby cheeks**
+Powerful
+Mountains
+Claws
+Forest
+Color (Black, Brown, White, etc.)
+Stocky
+Ears
+Large
+Nature
+Snout
+Tail (short)
+Habitat
+Round (body)
+Woods
+Furry
+Thick (fur)
+Quadruped
+Teeth
+River
+Arched (back)
+Paws
+Eyes
+Wilderness
+Snow
+Muscular
+**Large teeth**
+**Dam builder**
+**Log chewer**
+**Aquatic**
+**Wood chips**
+**Pond inhabitant**
+**Semi-aquatic**
+**Small ears**
+**Muddy**
+**Bank den**
+**Webbed feet**
+**Brown fur**
+**Flat tail**
+**Round body**
+**Water dweller**
+**Stocky body**
+Tidy
+Carpet
+Unmade
+Made
+Minimalist
+Duvet
+Window
+Curtains
+Quilt
+Bright
+Clean
+Bedside
+Headboard
+Luxurious
+Bedroom
+Blanket
+Soft
+Cluttered
+Patterned
+Sheets
+Wall
+Plain
+Colorful
+Mattress
+Messy
+Smooth
+Lamp
+New
+Wrinkled
+Dark
+Nightstand
+Rug
+Pillows
+Sunlight
+Fluffy
+Old
+Footboard
+Shadows
+Four-poster
+Simple
+Platform
+Frame
+Canopy
+**Black & Yellow**
+**Fuzzy**
+**Mandibles**
+**Wings**
+**Antennae**
+**Legs**
+**Pollen**
+**Eyes**
+**Striped Body**
+**Pollen Baskets**
+**Flower**
+**Stinger**
+**Hive**
+**Flying**
+**Honeycomb**
+Segmented
+In bark
+Near water
+Head
+Shiny
+Under rock
+Elytra
+Claws
+Legs
+Wings
+Hard shell
+Thorax
+Matte
+Fuzzy
+Dead wood
+Colorful
+Smooth
+Striped
+Antennae
+On flower
+Dark
+Translucent
+Sandy soil
+Spotted
+Metallic
+Mandibles
+Bumpy
+Textured
+On leaf
+On ground
+Small/big
+**Basket**
+**Gears**
+**Rust**
+**Accessories**
+**Chain**
+**Sidewalk**
+**Seat Style**
+**Mud**
+**Spokes**
+**Buildings**
+**Pedals**
+**Background**
+**Reflections**
+**Handlebars**
+**Shadow**
+**Tires**
+**Road**
+**Modern**
+**Lock**
+**Motion Blur**
+**Wheel Size**
+**Nature**
+**Gravel**
+**Frame Shape**
+**Lights**
+**Color**
+**Vintage**
+**Helmet**
+Plastic
+Sunlit
+Shiny
+Reflected
+Stacked
+Cluttered
+Rounded
+Isolated
+Patterned
+Short
+Wide
+Square
+Cap
+Dusty
+Smooth
+Frosted
+Blurred
+Dull
+Neck
+Color (e.g., Blue, Amber)
+Glass
+Wet
+Transparent
+Narrow
+Handle
+Lid
+Label
+Shadowed
+Grouped
+Curved
+Tall
+Opaque
+Filled
+Empty
+Color
+Shallow
+Reflected
+Centered
+Rough
+Stacked
+Deep
+Cluttered
+Pattern
+Isolated
+Matte
+Wide
+Asymmetrical
+Glossy
+Smooth
+Cracked
+Lit
+Handle(d)
+Round
+Transparent
+Texture
+Oval
+Narrow
+Rim(med)
+Tabletop
+Shadowed
+Footed
+Curved
+Opaque
+Thin build
+Big head
+With dog
+Shirt color
+Dirty face
+Stocky build
+Wearing glasses
+Dusty knees
+Smiling face
+By water
+Near tree
+Freckled face
+Backpack present
+School uniform
+Long legs
+Short arms
+Eye color (e.g., Blue eyes, Green eyes)
+Hair color (e.g., Brown hair, Blonde hair, Red hair)
+Street clothes
+On bike
+Muddy shoes
+Small ears
+Skin color
+Clean face
+Holding ball
+Tall height
+**Pedestrian Only**
+**Multi-lane**
+**Wide Deck**
+**Rusting Metal**
+**Rural Landscape**
+**Concrete Pillars**
+**Urban Setting**
+**Arched Span**
+**Symmetrical Design**
+**Brightly Painted**
+**Tall Towers**
+**Asymmetrical Design**
+**Curved Approach**
+**Wooden Planks**
+**Suspension Cables**
+**Green Surroundings**
+**River Crossing**
+**Stone Masonry**
+**Low Clearance**
+**High Traffic**
+**Narrow Path**
+**Historic Appearance**
+**Modern Look**
+**Cable-Stayed**
+**Illuminated Structure**
+**Lake Spanning**
+**Straight Span**
+**Water Reflection**
+**Steel Frame**
+**Foggy View**
+Passengers
+Windows
+Reflective
+Mirrors
+Steps
+Road
+Exhaust
+Rectangular
+Chassis
+Stop
+Branded
+Engine Cover
+Wheels
+Headlights
+Crosswalk
+Colorful
+Handrails
+Cityscape
+Traffic
+Seats
+Billboard
+Roof
+Tires
+Long
+Streetlights
+Doors
+Urban
+Dirty
+Body Shape
+Colorful Wings
+Thorax
+Proboscis
+Abdomen
+Woodland
+Wing Shape
+Antennae
+Size
+Flower
+Blue Sky
+Green Leaf
+Open Field
+Wing Pattern
+Bright Colors
+Two Wings
+Delicate
+Sunlight
+Patterns
+Eyespots
+Six Legs
+Desert Animal
+Brown Coat
+Long Legs
+Large Eyes
+Windblown
+Caravan Animal
+Dusty
+Nomadic
+Long Neck
+Arid Habitat
+Humps
+Stoic Face
+Hooves
+Sunbaked
+Bushy Eyelashes
+Leathery Mouth
+Beige Color
+Pack Animal
+Sandy Fur
+Empty
+Shiny
+Colored
+Reflective
+Scattered
+Flat
+Ring-pull
+Stacked
+Branded
+Clean
+Open
+Full
+Outdoor
+Rounded
+Isolated
+Overhead
+Short
+Rusted
+Dusty
+Dented
+Labeled
+Light
+Dark
+Indoor
+Cylindrical
+Crimped
+Wet
+Printed
+Brightly lit
+Rimmed
+Metallic
+Foreground
+Shadowed
+Textured
+Grouped
+Dirty
+Tall
+Background
+Sealed
+Mountains
+Lake
+Gatehouse
+Restored
+Ruined
+Foggy
+Massive
+Hilltop
+Weathered
+Gray/Brown (or other color)
+Battlements
+Cliffside
+Ornate
+Courtyard
+Archways
+Turrets
+Moat
+Overgrown
+Walls
+Coastal
+Rural
+Forested
+River
+Simple
+Keep
+Towering
+Imposing
+Drawbridge
+Towers
+Stonework
+Earthy
+Segmented
+Sunlit
+Shiny
+Legs
+Warty
+Greenery
+Head capsule
+Claspers
+Thorax
+Abdomen
+Dewy
+Flowery
+Colorful
+Smooth
+Striped
+Antennae
+Brown
+Hairy
+Dull
+Black
+Branching
+Spotted
+Green
+Woody
+Mandibles
+Shadowed
+Prolegs
+Leafy
+Hilly
+Head
+Solid (color)
+Wide (Body)
+Legs
+Back
+Ears
+Large
+Spine
+Calf
+Fenced
+Fur
+Dusty
+Barn
+Dry
+Pasture
+Field
+Brown
+Longhair
+Bull
+Neck
+Small
+Muddy
+Sunny
+Muzzle
+Hooves
+Horns
+Water (source)
+Black
+Udder
+Spotted
+Green
+Tail
+Reddish
+Cow
+Shorthair
+Grassy
+White
+Muscular
+Ribs
+Details (e.g., rivets, carvings)
+Color
+Legs (e.g., number, style)
+Material
+Upholstery
+Finish (e.g., glossy, matte)
+Surroundings (e.g., Room, Outdoor)
+Seat height
+Placement
+Pattern
+Reflection
+Size
+Backrest
+Condition (e.g., new, worn)
+Base
+Lighting
+Shadows
+Texture
+Scale (relative to other objects)
+Shape
+Armrests
+Frame
+Style (e.g., modern, antique)
+Stocky build
+Primate form
+Opposable thumbs
+Agile
+Arched Brow
+Tropical
+Jungle foliage
+Forest floor
+Round ears
+Protruding jaw
+Tree canopy
+Knuckle walker
+Bare face
+Long arms
+Dense Greenery
+Dark fur
+Muscular
+Quadrupedal
+**Shape** (e.g., "Round," "Square")
+**Gears**
+**Digital**
+**Pendulum**
+**Backlight**
+**Face**
+**Tick marks**
+**Analog**
+**Sunlight**
+**Alarm**
+**Frame**
+**Shadow**
+**Color** (e.g., "Gold," "Black")
+**Roman numerals**
+**Modern**
+**Table**
+**Size** (e.g., "Large," "Small")
+**Casing**
+**Numbers**
+**Desk**
+**Wall**
+**Counter**
+**Glass**
+**Vintage**
+**Dust**
+**Reflection**
+**Hands**
+Thick
+Sunlit
+Thin
+Lumpy
+Rainy
+Hazy
+Stormy
+Rough
+High
+Bright
+Pinkish
+Gray
+Golden
+Fuzzy
+Backlit
+Smooth
+Fibrous
+Wispy
+Low
+Billowy
+Diffuse
+Dark
+Sharp
+Translucent
+Fluffy
+Sheet-like
+Streaky
+Wedge
+Towering
+Silvery
+Swirling
+White
+Opaque
+Food crumbs
+Segmented
+Corners
+Shiny
+Flat
+Oval-shaped
+Six-legged
+Cracks
+Antennae
+Brown/Black
+Three body segments
+Hairy (legs/body)
+Compound eyes
+Dark
+Shadows
+Exoskeleton
+Winged (some)
+Mandibles
+Dirty
+Seat
+Color
+Window
+Legs
+Worn
+Angular
+Table
+Sectional
+Rounded
+Arms
+Pattern
+Blanket
+Back
+Books
+Fabric
+Leather
+Wall
+Wide
+Velvet
+Low
+Lamp
+Size
+New
+Light
+Rug
+Sleeper
+Rustic
+Pillows
+Cushions
+Texture
+Long
+Shadows
+Shape
+Tufted
+Frame
+Plants
+Modern
+**Legs:** Jointed, Sideways, Walking
+**Size:** Tiny, Large
+**Habitat:** Sandy, Rocky, Coastal, Tidepool
+**Shell:** Armored, Carapace, Exoskeleton
+**Claws:** Pincers, Snippers, Powerful
+**Eyes:** Stalked, Protruding
+**Shape:** Round, Broad, Flattened
+**Color:** Red, Brown, Mottled, Camouflaged
+**Texture:** Bumpy, Rough, Smooth
+**Ambush Predator**
+**Slit Eyes**
+**Sharp Teeth**
+**Sun Basking**
+**Powerful Tail**
+**Still Water**
+**Green/Brown**
+**Armored Back**
+**Scaly Skin**
+**Webbed Feet**
+**Muddy Bank**
+**Flat Profile**
+**Short Legs**
+**River Dweller**
+**Long Snout**
+Thick
+Empty
+Color
+Thin
+Steam
+Reflected
+Spilled
+Morning
+Branded
+Office
+Hot
+Clean
+Full
+Rounded
+Patterned
+Matte
+Steaming
+Short
+Wide
+Rim
+Glossy
+Liquid
+Cracked
+Stained
+Kitchen
+Cylindrical
+Opacity
+Base
+Texture
+Coffee
+Handle
+Tapered
+Tabletop
+Cold
+Shadowed
+Dirty
+Tall
+Coastal plains
+Small arms
+Large claws
+Scaly skin
+Arid desert
+Crested head
+Rocky terrain
+Bipedal stance
+Quadrupedal
+Stocky build
+Dense foliage
+Muscular legs
+Fragile bones
+Long neck
+Camouflage
+Powerful tail
+Horned face
+Feathered
+Lush forest
+Sharp teeth
+Volcanic
+Spiked tail
+Open plains
+Bony plates
+Bright Colors
+Swampy lands

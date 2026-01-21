@@ -1,0 +1,106 @@
+{
+  "plug adapter": [
+    "Compact",
+    "Rectangular",
+    "Plastic",
+    "Prongs",
+    "Ports",
+    "Electrical",
+    "Wall-mounted",
+    "Neutral colors"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen display",
+    "Compact size",
+    "Minimalist aesthetic",
+    "Bright screen",
+    "Metallic finish",
+    "Charging cable",
+    "Accessories (case, earbuds)",
+    "Ambient lighting",
+    "Flat surface"
+  ],
+  "scissors": [
+    "Metal blades",
+    "Plastic handles",
+    "Sharp tips",
+    "Pivot point",
+    "Indoor setting",
+    "Table surface",
+    "Light reflection"
+  ],
+  "light bulb": [
+    "Glass surface",
+    "Bulb shape",
+    "Bright light",
+    "Warm glow",
+    "Screw base",
+    "White color",
+    "Metal filament",
+    "Ceiling fixture"
+  ],
+  "can": [
+    "Metallic surface",
+    "Cylindrical shape",
+    "Label design",
+    "Lid presence",
+    "Shadowing effects",
+    "Reflections",
+    "Ambient lighting"
+  ],
+  "glass": [
+    "Transparent",
+    "Cylindrical",
+    "Reflective",
+    "Smooth",
+    "Clear",
+    "Thin",
+    "Light-refracting",
+    "Cluttered (if surrounded by other items)"
+  ],
+  "ball": [
+    "Round",
+    "Smooth",
+    "Colorful",
+    "Bouncy",
+    "Plastic",
+    "Bright",
+    "Lightweight",
+    "Patterned"
+  ],
+  "marker": [
+    "Bright color",
+    "Circular shape",
+    "Bold text",
+    "Plastic material",
+    "Visible ink",
+    "Flat surface",
+    "Easy to grip",
+    "Nearby objects",
+    "Indoor lighting",
+    "Tabletop placement"
+  ],
+  "cup": [
+    "Ceramic",
+    "Glossy",
+    "Handle",
+    "Round",
+    "Colorful",
+    "Textured",
+    "Decorative",
+    "Placed on table",
+    "Liquid-filled"
+  ],
+  "remote control": [
+    "Black color",
+    "Buttons",
+    "Sleek design",
+    "Plastic material",
+    "Compact size",
+    "Textured grip",
+    "Wireless",
+    "Simple layout",
+    "Ergonomic shape"
+  ]
+}

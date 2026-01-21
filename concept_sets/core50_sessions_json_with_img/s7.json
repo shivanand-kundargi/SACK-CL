@@ -1,0 +1,95 @@
+{
+  "plug adapter": [
+    "Rugged design",
+    "Weatherproof casing",
+    "Multiple sockets",
+    "Compact size",
+    "Outdoor use",
+    "Durable materials",
+    "Gripped surface",
+    "Colorful markings"
+  ],
+  "mobile phone": [
+    "Sleek design",
+    "Touchscreen",
+    "Portable",
+    "Bright display",
+    "Sunlight reflection",
+    "Slim profile",
+    "Colorful casing",
+    "Outdoor setting"
+  ],
+  "scissors": [
+    "Metal blades",
+    "Plastic handles",
+    "Sharp edges",
+    "Garden setting",
+    "Green grass",
+    "Sunlight"
+  ],
+  "light bulb": [
+    "Bright",
+    "Glass",
+    "Round",
+    "Hanging",
+    "Illuminated",
+    "Outdoor"
+  ],
+  "can": [
+    "Metallic surface",
+    "Cylindrical shape",
+    "Label design",
+    "Rust spots",
+    "Grass background",
+    "Dirt texture",
+    "Sunlight reflections"
+  ],
+  "glass": [
+    "Transparent",
+    "Clear",
+    "Cylindrical",
+    "Reflective",
+    "Sunlit",
+    "Surrounded by greenery",
+    "Outdoor setting",
+    "Lightweight"
+  ],
+  "ball": [
+    "Colorful",
+    "Bouncy",
+    "Textured",
+    "Grass",
+    "Sky",
+    "Sunlight",
+    "Shadow"
+  ],
+  "marker": [
+    "Colorful",
+    "Tall",
+    "Cylindrical",
+    "Bright",
+    "Textured",
+    "Labeled",
+    "Sturdy",
+    "Visible",
+    "Distinctive",
+    "Fixed"
+  ],
+  "cup": [
+    "Ceramic",
+    "Handle",
+    "Colorful",
+    "Textured",
+    "Sunlight",
+    "Grass",
+    "Tabletop",
+    "Shadows"
+  ],
+  "remote control": [
+    "Compact design",
+    "Button layout",
+    "Textured grip",
+    "Outdoor elements",
+    "Weather-resistant"
+  ]
+}
