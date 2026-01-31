@@ -402,19 +402,7 @@ python gradcamviz.py \
 
 ### Supported Models
 
-- **iCaRL**: `--model=icarl --buffer_size=2000 --model_config=best`
-- **DER**: `--model=der --buffer_size=2000 --model_config=best`
-- **DER++**: `--model=derpp --buffer_size=2000 --model_config=best`
-- **LwF**: `--model=lwf --lr=0.003` (or `--lr=0.03` for ImageNet-R)
-- **CODA-Prompt**: `--model=coda_prompt --model_config=best`
-- **BiC**: `--model=bic`
-- **GSS**: `--model=gss`
-- **HAL**: `--model=hal`
-- **MER**: `--model=mer`
-- **DualPrompt**: `--model=dualprompt`
-- **DAP**: `--model=dap`
-- **ER**: `--model=er`
-- **GEM**: `--model=gem`
+Our repository supports 70+ methods present in Mammoth library (Refer to Acknowlegements to access Mammoth library)
 
 ### Supported Datasets
 
@@ -428,6 +416,8 @@ python gradcamviz.py \
 - `seq-inaturalist`: Full iNaturalist
 - `seq-cifar10`: CIFAR-10
 - `seq-pmnist`: Permuted MNIST
+
+and other datasets present in Mammoth library ((Refer to Acknowlegements to access Mammoth library))
 
 ### Model-Specific Scripts
 
