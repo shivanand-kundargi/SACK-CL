@@ -13,4 +13,4 @@
 
 conda activate clip_dissect
 cd ./mammoth
-bash /home/shivank2/gokhale_user/shivanand/mammoth/CoG-CL_Scripts/modelOG/cub200/gem.sh
+bash PUT_YOUR_PATH
