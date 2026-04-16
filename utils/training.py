@@ -539,20 +539,20 @@ def train(model: ContinualModel, dataset: ContinualDataset,
                 class_grad_scale = None
                 if args.cog_cl==1 and t>0:
                         if args.dataset =='seq-cifar100' or  args.dataset =='seq-cifar100-224' :
-                            concept_dict_path="/g/g91/kundargi1/SACK/concept_sets/gpt3_init_dict/descriptors_cifar100_gemini.json"
+                            concept_dict_path="YOUR_PATH"
                             n_classes = 10
                         if args.dataset == 'seq-core50' :
                             n_classes = 10
-                            concept_dict_path="/g/g91/kundargi1/SACK/concept_sets/core50_sessions_json/all_session_CORE50.json"
+                            concept_dict_path="YOUR_PATH"
                         elif args.dataset == 'seq-cub200' :
                             n_classes = 20
-                            concept_dict_path="/g/g91/kundargi1/SACK/concept_sets/gpt3_init_dict/gpt3_cub_important.json"
+                            concept_dict_path="YOUR_PATH"
                         elif args.dataset == 'seq-inaturalist-300' :
                             n_classes = 30
-                            concept_dict_path="/p/lustre1/kundargi1/SACK/concept_sets/descriptors_inaturalist1000.json"    
+                            concept_dict_path="YOUR_PATH"    
                         elif args.dataset == 'seq-imagenet-r':
                             n_classes = 20
-                            concept_dict_path="/g/g91/kundargi1/SACK/concept_sets/gpt3_init_dict/Gemini2.0_IMAGENET-R_important_new.json"
+                            concept_dict_path="YOUR_PATH"
                         if args.dataset == 'seq-core50' :
                             each_labels = [train_loader.dataset[i][1] for i in range(len(train_loader.dataset))]
                             print("N_classes:", n_classes)
