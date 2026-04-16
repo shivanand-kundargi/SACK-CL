@@ -1,4 +1,4 @@
-# with open("/home/shivank2/gokhale_user/shivanand/mammoth/data/results/class-il/seq-cifar100/icarl/logs.pyd", "r", encoding="utf-8", errors="ignore") as f:
+# with open("__", "r", encoding="utf-8", errors="ignore") as f:
 #     logs = f.read()
 # # logs = dict(eval(logs))
 # # print(logs.keys())
