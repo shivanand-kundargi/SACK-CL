@@ -1,10 +1,10 @@
 
 # you can store them in a dict:
 PATHS_CONFIG = {
-    "seq-cifar100": "/g/g91/kundargi1/SACK/concept_sets/OG_order_cifar100_concepts",
-    "seq-cub200": "/g/g91/kundargi1/SACK/concept_sets/OG_order_CUB200_concepts",
-    "seq-imagenet-r": "/g/g91/kundargi1/SACK/concept_sets/OG_order_Imagenet_R_concepts",
-    "seq-core50": "/g/g91/kundargi1/SACK/concept_sets/core50_concepts_SACK",
-    "seq-inaturalist-300": "/p/lustre1/kundargi1/SACK/concept_sets/inaturalist_300_concept_sets",
-    "activations_path": "/p/lustre1/kundargi1/SACK/activations"
+    "seq-cifar100": "YOUR_PATH",
+    "seq-cub200": "YOUR_PATH",
+    "seq-imagenet-r": "YOUR_PATH",
+    "seq-core50": "YOUR_PATH",
+    "seq-inaturalist-300": "YOUR_PATH",
+    "activations_path": "YOUR_PATH"
 }
