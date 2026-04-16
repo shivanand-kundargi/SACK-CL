@@ -23,7 +23,7 @@ import os
 import os
 
 # Set the base path
-base_path = "/home/shivank2/shivanand"
+base_path = "YOUR_PATH"
 os.environ["BASE_PATH"] = base_path
 
 # Redirect cache and other directories to the base path
