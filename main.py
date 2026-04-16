@@ -23,7 +23,7 @@ import os
 import os
 
 # Set the base path
-base_path = "/g/g91/kundargi1"
+base_path = "PUT_YOUR_PATH"
 os.environ["BASE_PATH"] = base_path
 
 # Redirect cache and other directories to the base path
