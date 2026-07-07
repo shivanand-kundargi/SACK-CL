@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ```
 
 ### Dataset Preparation
-
+Note that other datasets will be automatically downloaded
 #### iNaturalist Dataset
 ```bash
 # One-time setup before running seq-inaturalist experiments
@@ -92,7 +92,7 @@ python main.py \
 
 ### Key Parameters
 
-- `--cog_cl`: Enable (1) or disable (0) SACK/CoG-CL
+- `--cog_cl`: Enable (1) or disable (0) SACK
 - `--sack_scores_type`: Type of SACK scoring (0=default, 1=uniform-to-weights, 2=alternative)
 - `--dataset`: Dataset identifier (see [Supported Datasets](#supported-datasets))
 - `--model`: Model architecture (see [Supported Models](#supported-models))
