@@ -5,7 +5,7 @@ echo "Starting run with seed $seed"
                 --model=icarl \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-icarl-cub200-SACK-mammoth \
@@ -25,7 +25,7 @@ echo "Starting run with seed $seed"
                 --buffer_size=500 \
                 --backbone=resnet50 \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-der-cub200-SACK-mammoth \
@@ -45,7 +45,7 @@ echo "Starting run with seed $seed"
                 --buffer_size=500 \
                 --backbone=resnet50 \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-derpp-cub200-SACK-mammoth \
@@ -63,7 +63,7 @@ echo "Starting run with seed $seed"
                 --model=lwf \
                 --lr=0.03\
                 --backbone=resnet50 \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-lwf-cub200-SACK-mammoth \
@@ -81,7 +81,7 @@ echo "Starting run with seed $seed"
                 --dataset=seq-cub200 \
                 --model=coda_prompt \
                 --model_config=best\
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-coda_prompt-cub200-SACK-mammoth \

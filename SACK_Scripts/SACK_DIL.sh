@@ -7,7 +7,7 @@ python main.py \
         --model=lwf \
         --lr=0.03\
         --backbone=resnet50 \
-        --cog_cl 1 \
+        --sack 1 \
         --batch_size=256 \
         --sack_scores_type=1 \
         --wandb_entity=abcxyz8431-cl \
@@ -23,7 +23,7 @@ python main.py \
         --model=lwf \
         --lr=0.03\
         --backbone=resnet50 \
-        --cog_cl 0 \
+        --sack 0 \
         --batch_size=128 \
         --sack_scores_type=0 \
         --num_workers=8 \
@@ -38,7 +38,7 @@ python main.py \
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --sack_scores_type=0 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-icarl-core50-SACK-mammoth \
@@ -54,7 +54,7 @@ python main.py \
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=0 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-icarl-core50-SACK-mammoth \
@@ -73,7 +73,7 @@ python main.py \
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=1 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-icarl-core50-SACK-mammoth \
@@ -88,7 +88,7 @@ python main.py \
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=2 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-icarl-core50-SACK-mammoth \

@@ -8,7 +8,7 @@ do
         --dataset=seq-cub200 \
         --model=coda_prompt \
         --model_config=best\
-        --cog_cl 1 \
+        --sack 1 \
         --wandb_entity=shiva-umbc \
         --wandb_project=Final-coda_prompt-cub200-cogcl-mammoth \
         --wandb_name=cogcl-run-seed-$seed \

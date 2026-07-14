@@ -8,7 +8,7 @@ seed=0
 #     --lr=0.03\
 #     --n_epochs=10 \
 #     --dataset_config=10tasks \
-#     --cog_cl 0 \
+#     --sack 0 \
 #     --wandb_entity=shiva-umbc \
 #     --wandb_project=Final-lwf-perm-mnist-cogcl-mammoth \
 #     --wandb_name=original-run-seed-$seed \
@@ -25,7 +25,7 @@ python main.py \
     --n_epochs=10 \
     --dataset_config=10tasks \
     --buffer_size=2000 \
-    --cog_cl 0 \
+    --sack 0 \
     --wandb_entity=shiva-umbc \
     --wandb_project=Final-icarl-perm-mnist-cogcl-mammoth \
     --wandb_name=original-run-seed-$seed \
@@ -42,7 +42,7 @@ python main.py \
     --n_epochs=10 \
     --dataset_config=10tasks \
     --buffer_size=2000 \
-    --cog_cl 0 \
+    --sack 0 \
     --wandb_entity=shiva-umbc \
     --wandb_project=Final-der-perm-mnist-cogcl-mammoth \
     --wandb_name=original-run-seed-$seed \
@@ -59,7 +59,7 @@ python main.py \
     --n_epochs=10 \
     --dataset_config=10tasks \
     --buffer_size=2000 \
-    --cog_cl 0 \
+    --sack 0 \
     --wandb_entity=shiva-umbc \
     --wandb_project=Final-derpp-perm-mnist-cogcl-mammoth \
     --wandb_name=original-run-seed-$seed \
@@ -75,7 +75,7 @@ python main.py \
     --lr=0.03\
     --n_epochs=10 \
     --dataset_config=10tasks \
-    --cog_cl 0 \
+    --sack 0 \
     --wandb_entity=shiva-umbc \
     --wandb_project=Final-coda_prompt-perm-mnist-cogcl-mammoth \
     --wandb_name=original-run-seed-$seed \

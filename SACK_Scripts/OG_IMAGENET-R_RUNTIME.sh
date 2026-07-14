@@ -9,7 +9,7 @@ python main.py \
         --buffer_size=2000 \
         --backbone=resnet50 \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-icarl-imagenet-r-SACK-mammoth \
@@ -27,7 +27,7 @@ python main.py \
         --model=lwf \
         --lr=0.03 \
         --backbone=resnet50 \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-lwf-imagenet-r-SACK-mammoth \
@@ -45,7 +45,7 @@ python main.py \
         --buffer_size=500 \
         --backbone=resnet50 \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-der-imagenet-r-SACK-mammoth \
@@ -63,7 +63,7 @@ python main.py \
         --buffer_size=500 \
         --backbone=resnet50 \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-derpp-imagenet-r-SACK-mammoth \
@@ -79,7 +79,7 @@ python main.py \
         --dataset=seq-imagenet-r \
         --model=coda_prompt \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-coda_prompt-imagenet-r-SACK-mammoth \

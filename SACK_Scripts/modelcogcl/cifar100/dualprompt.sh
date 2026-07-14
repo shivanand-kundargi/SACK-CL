@@ -9,7 +9,7 @@ do
         --dataset=seq-cifar100-224 \
         --model=dualprompt \
         --model_config=best\
-        --cog_cl 1 \
+        --sack 1 \
         --wandb_entity=shiva-umbc \
         --wandb_project=Final-dualprompt-cifar100-cogcl-mammoth \
         --wandb_name=cogcl-run-seed-$seed \

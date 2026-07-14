@@ -9,7 +9,7 @@ do
                 --model=icarl \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 0 \
+                --sack 0 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-icarl-cifar100-SACK-mammoth \
@@ -24,7 +24,7 @@ do
                 --model=der \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 0 \
+                --sack 0 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-der-cifar100-SACK-mammoth \
@@ -38,7 +38,7 @@ do
                 --model=derpp \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 0 \
+                --sack 0 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-derpp-cifar100-SACK-mammoth \
@@ -51,7 +51,7 @@ do
                 --dataset=seq-cifar100 \
                 --model=lwf \
                 --lr=0.003\
-                --cog_cl 0 \
+                --sack 0 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-lwf-cifar100-SACK-mammoth \
@@ -64,7 +64,7 @@ do
                 --dataset=seq-cifar100-224 \
                 --model=coda_prompt \
                 --model_config=best\
-                --cog_cl 0 \
+                --sack 0 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-coda_prompt-cifar100-SACK-mammoth \
@@ -140,7 +140,7 @@ done
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-icarl-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -169,7 +169,7 @@ done
 #         --model=gem \
 #         --buffer_size=2000 \
 #         --lr=0.03 \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-gem-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -197,7 +197,7 @@ done
 #         --model=er \
 #         --buffer_size=2000 \
 #         --lr=0.03 \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-er-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -225,7 +225,7 @@ done
 #         --model=der \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-der-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -253,7 +253,7 @@ done
 #         --model=derpp \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-derpp-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -280,7 +280,7 @@ done
 #         --model=bic \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-bic-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -309,7 +309,7 @@ done
 #         --lr=0.05 \
 #         --gss_minibatch_size=10 \
 #         --batch_size=10 \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-gss-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -339,7 +339,7 @@ done
 #         --lr=0.03 \
 #         --beta=0.3 \
 #         --gamma=0.1 \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-hal-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -374,7 +374,7 @@ done
 #         --lr=0.1 \
 #         --beta=0.01 \
 #         --gamma=0.03 \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-mer-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -400,7 +400,7 @@ done
 #         --dataset=seq-cifar100 \
 #         --model=lwf \
 #         --lr=0.03\
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-lwf-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -427,7 +427,7 @@ done
 #         --dataset=seq-cifar100-224 \
 #         --model=coda_prompt \
 #         --model_config=best\
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-coda_prompt-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -455,7 +455,7 @@ done
 #         --dataset=seq-cifar100-224 \
 #         --model=dualprompt \
 #         --model_config=best\
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-dualprompt-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \
@@ -483,7 +483,7 @@ done
 #         --dataset=seq-cifar100 \
 #         --model=dap \
 #         --model_config=best\
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-dap-cifar100-cogcl-mammoth \
 #         --wandb_name=original-run-seed-$seed \

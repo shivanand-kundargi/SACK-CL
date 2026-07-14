@@ -198,8 +198,8 @@ def resolve_variant(line: str) -> Optional[str]:
     if effective_variant is not None:
         return effective_variant
 
-    cog_cl = extract_int(line, "cog_cl")
-    if cog_cl == 0:
+    sack = extract_int(line, "sack")
+    if sack == 0:
         return "baseline"
 
     schedule_variant = canonicalize_variant_for_analysis(extract_string(line, "sack_schedule_variant"))

@@ -6,7 +6,7 @@ python main.py \
     --model=icarl \
     --buffer_size=2000 \
     --model_config=best \
-    --cog_cl 1 \
+    --sack 1 \
     --wandb_entity=abcxyz8431-cl \
     --wandb_project=Final-icarl-imagenet-r-cogcl-mammoth \
     --wandb_name=cogcl-run-seed-$seed \
@@ -21,7 +21,7 @@ python main.py \
     --model=icarl \
     --buffer_size=2000 \
     --model_config=best \
-    --cog_cl 0 \
+    --sack 0 \
     --wandb_entity=abcxyz8431-cl \
     --wandb_project=Final-icarl-imagenet-r-cogcl-mammoth \
     --wandb_name=original-run-seed-$seed \

@@ -6,14 +6,14 @@ WANDB_ENTITY="abcxyz8431-cl"
 
 for seed in "${SEEDS[@]}"; do
 
-        # iCaRL original (no SACK, cog_cl 0)
-        echo "Starting iNaturalist-300 iCaRL ORIGINAL run with seed $seed (CoG-CL disabled)"
+        # iCaRL original (no SACK, sack 0)
+        echo "Starting iNaturalist-300 iCaRL ORIGINAL run with seed $seed (SACK disabled)"
         python main.py \
                 --dataset=seq-inaturalist-300 \
                 --model=icarl \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 0 \
+                --sack 0 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-icarl-inat300-ORIGINAL \
@@ -25,14 +25,14 @@ for seed in "${SEEDS[@]}"; do
                 --log_perf_metrics=1 \
                 --seed="$seed"
 
-        # iCaRL with SACK (cog_cl 1)
-        echo "Starting iNaturalist-300 iCaRL SACK run with seed $seed (CoG-CL enabled)"
+        # iCaRL with SACK (sack 1)
+        echo "Starting iNaturalist-300 iCaRL SACK run with seed $seed (SACK enabled)"
         python main.py \
                 --dataset=seq-inaturalist-300 \
                 --model=icarl \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-icarl-inat300-SACK \
@@ -44,14 +44,14 @@ for seed in "${SEEDS[@]}"; do
                 --log_perf_metrics=1 \
                 --seed="$seed"
 
-        # DER original (no SACK, cog_cl 0)
-        echo "Starting iNaturalist-300 DER ORIGINAL run with seed $seed (CoG-CL disabled)"
+        # DER original (no SACK, sack 0)
+        echo "Starting iNaturalist-300 DER ORIGINAL run with seed $seed (SACK disabled)"
         python main.py \
                 --dataset=seq-inaturalist-300 \
                 --model=der \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 0 \
+                --sack 0 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-der-inat300-ORIGINAL \
@@ -63,14 +63,14 @@ for seed in "${SEEDS[@]}"; do
                 --log_perf_metrics=1 \
                 --seed="$seed"
 
-        # DER with SACK (cog_cl 1)
-        echo "Starting iNaturalist-300 DER SACK run with seed $seed (CoG-CL enabled)"
+        # DER with SACK (sack 1)
+        echo "Starting iNaturalist-300 DER SACK run with seed $seed (SACK enabled)"
         python main.py \
                 --dataset=seq-inaturalist-300 \
                 --model=der \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-der-inat300-SACK \
@@ -82,14 +82,14 @@ for seed in "${SEEDS[@]}"; do
                 --log_perf_metrics=1 \
                 --seed="$seed"
 
-        # DER++ original (no SACK, cog_cl 0)
-        echo "Starting iNaturalist-300 DER++ ORIGINAL run with seed $seed (CoG-CL disabled)"
+        # DER++ original (no SACK, sack 0)
+        echo "Starting iNaturalist-300 DER++ ORIGINAL run with seed $seed (SACK disabled)"
         python main.py \
                 --dataset=seq-inaturalist-300 \
                 --model=derpp \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 0 \
+                --sack 0 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-derpp-inat300-ORIGINAL \
@@ -101,14 +101,14 @@ for seed in "${SEEDS[@]}"; do
                 --log_perf_metrics=1 \
                 --seed="$seed"
 
-        # DER++ with SACK (cog_cl 1)
-        echo "Starting iNaturalist-300 DER++ SACK run with seed $seed (CoG-CL enabled)"
+        # DER++ with SACK (sack 1)
+        echo "Starting iNaturalist-300 DER++ SACK run with seed $seed (SACK enabled)"
         python main.py \
                 --dataset=seq-inaturalist-300 \
                 --model=derpp \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-derpp-inat300-SACK \
@@ -120,13 +120,13 @@ for seed in "${SEEDS[@]}"; do
                 --log_perf_metrics=1 \
                 --seed="$seed"
 
-        # LwF original (no SACK, cog_cl 0)
-        echo "Starting iNaturalist-300 LwF ORIGINAL run with seed $seed (CoG-CL disabled)"
+        # LwF original (no SACK, sack 0)
+        echo "Starting iNaturalist-300 LwF ORIGINAL run with seed $seed (SACK disabled)"
         python main.py \
                 --dataset=seq-inaturalist-300 \
                 --model=lwf \
                 --lr=0.003 \
-                --cog_cl 0 \
+                --sack 0 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-lwf-inat300-ORIGINAL \
@@ -138,13 +138,13 @@ for seed in "${SEEDS[@]}"; do
                 --log_perf_metrics=1 \
                 --seed="$seed"
 
-        # LwF with SACK (cog_cl 1)
-        echo "Starting iNaturalist-300 LwF SACK run with seed $seed (CoG-CL enabled)"
+        # LwF with SACK (sack 1)
+        echo "Starting iNaturalist-300 LwF SACK run with seed $seed (SACK enabled)"
         python main.py \
                 --dataset=seq-inaturalist-300 \
                 --model=lwf \
                 --lr=0.003 \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-lwf-inat300-SACK \
@@ -156,13 +156,13 @@ for seed in "${SEEDS[@]}"; do
                 --log_perf_metrics=1 \
                 --seed="$seed"
 
-        # CoDA-Prompt original (no SACK, cog_cl 0)
-        echo "Starting iNaturalist-300 CoDA-Prompt ORIGINAL run with seed $seed (CoG-CL disabled)"
+        # CoDA-Prompt original (no SACK, sack 0)
+        echo "Starting iNaturalist-300 CoDA-Prompt ORIGINAL run with seed $seed (SACK disabled)"
         python main.py \
                 --dataset=seq-inaturalist-300 \
                 --model=coda_prompt \
                 --model_config=best \
-                --cog_cl 0 \
+                --sack 0 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-coda-prompt-inat300-ORIGINAL \
@@ -174,13 +174,13 @@ for seed in "${SEEDS[@]}"; do
                 --log_perf_metrics=1 \
                 --seed="$seed"
 
-        # CoDA-Prompt with SACK (cog_cl 1)
-        echo "Starting iNaturalist-300 CoDA-Prompt SACK run with seed $seed (CoG-CL enabled)"
+        # CoDA-Prompt with SACK (sack 1)
+        echo "Starting iNaturalist-300 CoDA-Prompt SACK run with seed $seed (SACK enabled)"
         python main.py \
                 --dataset=seq-inaturalist-300 \
                 --model=coda_prompt \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-coda-prompt-inat300-SACK \

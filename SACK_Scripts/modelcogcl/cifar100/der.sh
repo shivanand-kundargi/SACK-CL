@@ -11,7 +11,7 @@ do
         --model=der \
         --buffer_size=2000 \
         --model_config=best \
-        --cog_cl 1 \
+        --sack 1 \
         --wandb_entity=shiva-umbc \
         --wandb_project=Final-der-cifar100-cogcl-mammoth \
         --wandb_name=cogcl-run-seed-$seed \

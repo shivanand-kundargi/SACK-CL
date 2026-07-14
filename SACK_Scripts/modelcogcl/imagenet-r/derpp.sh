@@ -10,7 +10,7 @@ do
         --buffer_size=2000 \
         --backbone=resnet50 \
         --model_config=best \
-        --cog_cl 1 \
+        --sack 1 \
         --wandb_entity=shiva-umbc \
         --wandb_project=Final-derpp-imagenet-r-cogcl-mammoth \
         --wandb_name=cogcl-run-seed-$seed \

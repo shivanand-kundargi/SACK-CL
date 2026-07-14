@@ -15,7 +15,7 @@ do
         --lr=0.1 \
         --beta=0.01 \
         --gamma=0.03 \
-        --cog_cl 1 \
+        --sack 1 \
         --wandb_entity=shiva-umbc \
         --wandb_project=Final-mer-cifar100-cogcl-mammoth \
         --wandb_name=cogcl-run-seed-$seed \

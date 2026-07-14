@@ -11,7 +11,7 @@ for seed in "${SEEDS[@]}"; do
                 --model=icarl \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 0 \
+                --sack 0 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-icarl-inaturalist-SACK \
@@ -29,7 +29,7 @@ for seed in "${SEEDS[@]}"; do
                 --model=icarl \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-icarl-inaturalist-SACK \
@@ -46,7 +46,7 @@ for seed in "${SEEDS[@]}"; do
                 --model=der \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-der-inaturalist-SACK \
@@ -64,7 +64,7 @@ for seed in "${SEEDS[@]}"; do
                 --model=derpp \
                 --buffer_size=2000 \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-derpp-inaturalist-SACK \
@@ -78,7 +78,7 @@ for seed in "${SEEDS[@]}"; do
                 --dataset=seq-inaturalist-300 \
                 --model=lwf \
                 --lr=0.003 \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-lwf-inaturalist-SACK \
@@ -95,7 +95,7 @@ for seed in "${SEEDS[@]}"; do
                 --dataset=seq-inaturalist-300 \
                 --model=coda_prompt \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity="$WANDB_ENTITY" \
                 --wandb_project=Final-coda_prompt-inaturalist-SACK \

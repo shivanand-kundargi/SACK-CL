@@ -432,10 +432,10 @@ for raw_method in "${METHOD_LIST[@]}"; do
                 echo "[skip] method=${method} variant=${variant} seed=${seed} already completed according to ${run_log_file}"
                 continue
             fi
-            cog_flag="--cog_cl=0"
+            sack_flag="--sack=0"
             variant_flags=()
             if [[ "${variant}" != "baseline" ]]; then
-                cog_flag="--cog_cl=1"
+                sack_flag="--sack=1"
                 variant_flags+=("--sack_schedule_variant=${variant}")
             fi
 
@@ -444,7 +444,7 @@ for raw_method in "${METHOD_LIST[@]}"; do
                 "--dataset=${dataset}"
                 "--model=${method}"
                 "--seed=${seed}"
-                "${cog_flag}"
+                "${sack_flag}"
                 "--sack_scores_type=0"
                 "--results_path=${RESULTS_PATH}"
                 "--enable_other_metrics=True"

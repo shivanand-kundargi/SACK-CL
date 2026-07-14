@@ -171,10 +171,10 @@ run_one() {
     )
 
     if [[ "${variant}" == "baseline" ]]; then
-        cmd+=(--cog_cl=0)
+        cmd+=(--sack=0)
     else
         cmd+=(
-            --cog_cl=1
+            --sack=1
             --sack_schedule_variant="${SACK_SCHEDULE_VARIANT}"
             --sack_weight_granularity="${variant}"
             --sack_aggregation="${SACK_AGGREGATION}"

@@ -9,7 +9,7 @@
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=1 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=order-sensitivity-icarl-cifar100-SACK-mammoth \
@@ -25,7 +25,7 @@
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=1 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=order-sensitivity-icarl-cifar100-SACK-mammoth \
@@ -42,7 +42,7 @@
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=1 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=order-sensitivity-icarl-cifar100-SACK-mammoth \
@@ -58,7 +58,7 @@
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=1 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=order-sensitivity-icarl-cifar100-SACK-mammoth \
@@ -74,7 +74,7 @@
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=1 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=order-sensitivity-icarl-cifar100-SACK-mammoth \
@@ -96,7 +96,7 @@ python main.py \
         --model=icarl \
         --buffer_size=2000 \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=2 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=order-sensitivity-icarl-cifar100-SACK-mammoth \
@@ -116,7 +116,7 @@ python main.py \
         --model=icarl \
         --buffer_size=2000 \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=2 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=order-sensitivity-icarl-cifar100-SACK-mammoth \
@@ -140,7 +140,7 @@ python main.py \
         --model=icarl \
         --buffer_size=2000 \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=2 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=order-sensitivity-icarl-cifar100-SACK-mammoth \
@@ -165,7 +165,7 @@ python main.py \
         --model=icarl \
         --buffer_size=2000 \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=2 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=order-sensitivity-icarl-cifar100-SACK-mammoth \
@@ -194,7 +194,7 @@ python main.py \
         --model=icarl \
         --buffer_size=2000 \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=2 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=order-sensitivity-icarl-cifar100-SACK-mammoth \

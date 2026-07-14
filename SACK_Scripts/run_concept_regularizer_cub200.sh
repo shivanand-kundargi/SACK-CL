@@ -25,7 +25,7 @@ do
         --dataset=seq-cub200 \
         --model=icarl \
         --buffer_size=2000 \
-        --cog_cl=1 \
+        --sack=1 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-icarl-cub200-SACK-mammoth \
         --wandb_name=concept-reg-run-seed-$seed \
@@ -51,7 +51,7 @@ do
         --model=der \
         --backbone=resnet50 \
         --buffer_size=500 \
-        --cog_cl=1 \
+        --sack=1 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-der-cub200-SACK-mammoth \
         --wandb_name=concept-reg-run-seed-$seed \
@@ -77,7 +77,7 @@ do
         --model=derpp \
         --backbone=resnet50 \
         --buffer_size=500 \
-        --cog_cl=1 \
+        --sack=1 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-derpp-cub200-SACK-mammoth \
         --wandb_name=concept-reg-run-seed-$seed \
@@ -103,7 +103,7 @@ do
         --model=lwf \
         --lr=0.03 \
         --backbone=resnet50 \
-        --cog_cl=1 \
+        --sack=1 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-lwf-cub200-SACK-mammoth \
         --wandb_name=concept-reg-run-seed-$seed \
@@ -127,7 +127,7 @@ done
 #     python main.py \
 #         --dataset=seq-cub200 \
 #         --model=coda_prompt \
-#         --cog_cl=1 \
+#         --sack=1 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-coda_prompt-cub200-SACK-mammoth \
 #         --wandb_name=concept-reg-run-seed-$seed \

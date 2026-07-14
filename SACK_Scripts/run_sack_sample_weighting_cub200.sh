@@ -79,7 +79,7 @@ run_one() {
     cmd=(
         "${PYTHON_BIN}" main.py
         --dataset="${DATASET}"
-        --cog_cl=1
+        --sack=1
         --sack_scores_type=0
         --sack_schedule_variant="${SACK_SCHEDULE_VARIANT}"
         --sack_weight_granularity="${granularity}"

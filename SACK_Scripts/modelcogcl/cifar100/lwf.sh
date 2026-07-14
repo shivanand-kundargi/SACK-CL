@@ -8,7 +8,7 @@ do
         --dataset=seq-cifar100 \
         --model=lwf \
         --lr=0.03\
-        --cog_cl 1 \
+        --sack 1 \
         --wandb_entity=shiva-umbc \
         --wandb_project=Final-lwf-cifar100-cogcl-mammoth \
         --wandb_name=cogcl-run-seed-$seed \

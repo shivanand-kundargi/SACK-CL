@@ -49,7 +49,7 @@ common_args=(
 run_variant() {
     local model="$1"
     local variant_label="$2"   # "original" or "sack"
-    local cog_cl_flag="$3"
+    local sack_flag="$3"
 
     local dataset="${DATASET_MAP[$model]}"
     local ckpt_root="${CKPT_ROOT_MAP[$model]}"
@@ -69,7 +69,7 @@ run_variant() {
     "${PYTHON_BIN}" SACK_ECE.py \
         --dataset="${dataset}" \
         --model="${model}" \
-        --cog_cl="${cog_cl_flag}" \
+        --sack="${sack_flag}" \
         "${common_args[@]}" \
         "${extra_args[@]}" \
         --checkpoint_dir="${checkpoint_dir}" \

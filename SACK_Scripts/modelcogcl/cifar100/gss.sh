@@ -12,7 +12,7 @@ do
         --lr=0.05 \
         --gss_minibatch_size=128 \
         --batch_size=128 \
-        --cog_cl 1 \
+        --sack 1 \
         --wandb_entity=shiva-umbc \
         --wandb_project=Final-gss-cifar100-cogcl-mammoth \
         --wandb_name=cogcl-run-seed-$seed \

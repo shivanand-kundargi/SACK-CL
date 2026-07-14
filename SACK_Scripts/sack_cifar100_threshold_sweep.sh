@@ -33,7 +33,7 @@ run_method () {
             python main.py \
                 --dataset="${dataset}" \
                 --model="${method}" \
-                --cog_cl=1 \
+                --sack=1 \
                 --sack_scores_type="${SACK_SCORES_TYPE}" \
                 --sack_similarity_percentile="${percentile}" \
                 --wandb_entity="${WANDB_ENTITY}" \

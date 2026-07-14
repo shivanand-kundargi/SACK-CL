@@ -8,7 +8,7 @@ python main.py \
         --model=icarl \
         --buffer_size=2000 \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-icarl-cub200-SACK-mammoth \
@@ -26,7 +26,7 @@ python main.py \
         --backbone=resnet50 \
         --buffer_size=500 \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-der-cub200-SACK-mammoth \
@@ -43,7 +43,7 @@ python main.py \
         --buffer_size=500 \
         --backbone=resnet50 \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-derpp-cub200-SACK-mammoth \
@@ -60,7 +60,7 @@ python main.py \
         --model=lwf \
         --lr=0.03 \
         --backbone=resnet50 \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-lwf-cub200-SACK-mammoth \
@@ -76,7 +76,7 @@ python main.py \
         --dataset=seq-cub200 \
         --model=coda_prompt \
         --model_config=best \
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-coda_prompt-cub200-SACK-mammoth \

@@ -8,7 +8,7 @@ do
         --model=icarl \
         --buffer_size=2000 \
         --model_config=best \
-        --cog_cl 1 \
+        --sack 1 \
         --wandb_entity=shiva-umbc \
         --wandb_project=Final-icarl-cifar10-cogcl-mammoth \
         --wandb_name=cogcl-run-seed-$seed \
@@ -34,7 +34,7 @@ python main.py \
     --model=der \
     --buffer_size=2000 \
     --model_config=best \
-    --cog_cl 1 \
+    --sack 1 \
     --wandb_entity=shiva-umbc \
     --wandb_project=Final-der-cifar10-cogcl-mammoth \
     --wandb_name=cogcl-run-seed-$seed \
@@ -59,7 +59,7 @@ python main.py \
     --model=derpp \
     --buffer_size=2000 \
     --model_config=best \
-    --cog_cl 0 \
+    --sack 0 \
     --wandb_entity=shiva-umbc \
     --wandb_project=Final-derpp-cifar10-cogcl-mammoth \
     --wandb_name=cogcl-run-seed-$seed \
@@ -81,7 +81,7 @@ python main.py \
     --dataset=seq-cifar10 \
     --model=lwf \
     --lr=0.03\
-    --cog_cl 1 \
+    --sack 1 \
     --wandb_entity=shiva-umbc \
     --wandb_project=Final-lwf-cifar10-cogcl-mammoth \
     --wandb_name=cogcl-run-seed-$seed \
@@ -106,7 +106,7 @@ python main.py \
     --dataset=seq-cifar10 \
     --model=coda_prompt \
     --model_config=best\
-    --cog_cl 1 \
+    --sack 1 \
     --wandb_entity=shiva-umbc \
     --wandb_project=Final-coda_prompt-cifar10-cogcl-mammoth \
     --wandb_name=cogcl-run-seed-$seed \

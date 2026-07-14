@@ -76,7 +76,7 @@ python main.py \
     --dataset=seq-cifar100-224 \
     --model=coda_prompt \
     --model_config=best \
-    --cog_cl=0 \
+    --sack=0 \
     --sack_scores_type=0 \
     --wandb_entity=your-entity \
     --wandb_project=your-project \
@@ -88,14 +88,14 @@ python main.py \
 
 ### Training with SACK
 
-Enable SACK by setting `--cog_cl=1`:
+Enable SACK by setting `--sack=1`:
 
 ```bash
 python main.py \
     --dataset=seq-cifar100-224 \
     --model=coda_prompt \
     --model_config=best \
-    --cog_cl=1 \
+    --sack=1 \
     --sack_scores_type=0 \
     --wandb_entity=your-entity \
     --wandb_project=your-project \
@@ -115,7 +115,7 @@ python main.py \
     --model=icarl \
     --buffer_size=2000 \
     --model_config=best \
-    --cog_cl=1 \
+    --sack=1 \
     --sack_schedule_variant=w_to_u \
     --sack_weight_granularity=sample \
     --sack_sample_topk_concepts=5 \
@@ -129,7 +129,7 @@ python main.py \
 
 ### Key Parameters
 
-- `--cog_cl`: Enable (1) or disable (0) SACK/CoG-CL
+- `--sack`: Enable (1) or disable (0) SACK
 - `--sack_scores_type`: Legacy schedule selector (`0=w_to_u`, `1=u_to_w`, `2=u_to_random`, `3=wbar_to_u`, `4=u_to_wbar`)
 - `--sack_schedule_variant`: Explicit schedule variant. Supported values are `w_to_u`, `u_to_w`, `wbar_to_u`, `u_to_wbar`, `u_to_random`, `u_to_random_fixed`, and `random_to_u`
 - `--sack_weight_granularity`: Use `class` weights or `sample` weights
@@ -251,7 +251,7 @@ Compute ECE for trained checkpoints:
 python SACK_ECE.py \
     --dataset=seq-cifar100 \
     --model=icarl \
-    --cog_cl=1 \
+    --sack=1 \
     --checkpoint_dir=checkpoints \
     --checkpoint_prefix=icarl-cifar100-sack-seed-0 \
     --logits_dir=ece_comparisons/icarl/sack/logits \
@@ -573,7 +573,7 @@ python main.py \
     --model=icarl \
     --inference_only=1 \
     --loadcheck=/path/to/checkpoint.pt \
-    --cog_cl=1 \
+    --sack=1 \
     --sack_scores_type=0 \
     --enable_other_metrics=True \
     --permute_classes=True \
@@ -592,7 +592,7 @@ python main.py \
     --loadcheck=/path/to/checkpoint.pt \
     --cifar_c_corruption=gaussian_noise \
     --cifar_c_severity=1 \
-    --cog_cl=1 \
+    --sack=1 \
     --sack_scores_type=0 \
     --seed=0 \
     --buffer_size=2000 \

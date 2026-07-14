@@ -9,7 +9,7 @@ do
         --dataset=seq-cifar100 \
         --model=lwf \
         --lr=0.03\
-        --cog_cl 0 \
+        --sack 0 \
         --wandb_entity=shiva-umbc \
         --wandb_project=Final-lwf-cifar100-cogcl-mammoth \
         --wandb_name=original-run-seed-$seed \

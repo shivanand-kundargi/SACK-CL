@@ -502,7 +502,7 @@ def train_single_epoch(model: ContinualModel,
             else:
                 loss = model.meta_observe(inputs, labels, not_aug_inputs, epoch=epoch,
                                           grad_scales=batch_scales, **extra_fields)
-        # if args.cog_cl==1 and exp>0:
+        # if args.sack==1 and exp>0:
         #     print("before:", loss)
         #     loss = loss * (sum(scores))*exp
             # print("after:", loss)
@@ -536,11 +536,11 @@ def train(model: ContinualModel, dataset: ContinualDataset,
         args: the arguments of the current execution
     """
     args.sack_schedule_variant = _resolve_sack_schedule_variant(args)
-    args.sack_effective_variant = args.sack_schedule_variant if int(getattr(args, 'cog_cl', 0)) == 1 else 'baseline'
+    args.sack_effective_variant = args.sack_schedule_variant if int(getattr(args, 'sack', 0)) == 1 else 'baseline'
     args.sack_weight_granularity = str(getattr(args, 'sack_weight_granularity', 'class')).strip().lower().replace('-', '_')
     if args.sack_weight_granularity not in ('class', 'sample'):
         raise ValueError(f"Unsupported SACK weight granularity: {args.sack_weight_granularity}")
-    args.sack_effective_granularity = args.sack_weight_granularity if int(getattr(args, 'cog_cl', 0)) == 1 else 'none'
+    args.sack_effective_granularity = args.sack_weight_granularity if int(getattr(args, 'sack', 0)) == 1 else 'none'
 
     print(args)
 
@@ -556,7 +556,7 @@ def train(model: ContinualModel, dataset: ContinualDataset,
 
     model.net.to(model.device)
     clip_model = None
-    if int(getattr(args, 'cog_cl', 0)) == 1:
+    if int(getattr(args, 'sack', 0)) == 1:
         clip_model, _ = clip.load("ViT-B/32", device=model.device)
         if model.device.type == 'cuda':
             torch.cuda.empty_cache()
@@ -680,7 +680,7 @@ def train(model: ContinualModel, dataset: ContinualDataset,
                 each_labels = None
                 up_task_labels = None
                 sack_weight_granularity = getattr(args, "sack_weight_granularity", "class")
-                if args.cog_cl==1 and t>0:
+                if args.sack==1 and t>0:
                         if args.dataset =='seq-cifar100' or  args.dataset =='seq-cifar100-224' :
                             concept_dict_path="YOUR_PATH"
                             n_classes = 10
@@ -763,7 +763,7 @@ def train(model: ContinualModel, dataset: ContinualDataset,
                                     class_grad_scale[cls_idx] = scale
                 while True:
 
-                    if args.cog_cl==1 and t>0:
+                    if args.sack==1 and t>0:
                         sack_epoch_end_probs = sack_end_probs
                         if args.sack_schedule_variant == 'u_to_random':
                             sack_epoch_end_probs = _sample_epoch_random_weights(len(sack_end_probs))

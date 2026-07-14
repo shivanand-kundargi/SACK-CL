@@ -10,7 +10,7 @@ do
         --dataset=seq-imagenet-r \
         --model=coda_prompt \
         --model_config=best\
-        --cog_cl 1 \
+        --sack 1 \
         --wandb_entity=shiva-umbc \
         --wandb_project=Final-coda_prompt-imagenet-r-cogcl-mammoth \
         --wandb_name=cogcl-run-seed-$seed \

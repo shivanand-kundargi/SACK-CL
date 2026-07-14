@@ -53,7 +53,7 @@ for model in "${MODEL_LIST[@]}"; do
             --dataset=seq-cifar100-224 \
             --model="${model}" \
             --model_config=best \
-            --cog_cl=1 \
+            --sack=1 \
             --sack_scores_type="${SACK_SCORES_TYPE}" \
             --batch_size="${BATCH_SIZE}" \
             --enable_other_metrics=True \
@@ -73,7 +73,7 @@ for model in "${MODEL_LIST[@]}"; do
             --dataset=seq-cifar100-224 \
             --model="${model}" \
             --model_config=best \
-            --cog_cl=1 \
+            --sack=1 \
             --sack_scores_type="${SACK_SCORES_TYPE}" \
             --batch_size="${BATCH_SIZE}" \
             --enable_other_metrics=True \

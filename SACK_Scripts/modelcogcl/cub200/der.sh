@@ -7,7 +7,7 @@
 #     --buffer_size=500 \
 #     --backbone=resnet50 \
 #     --model_config=best \
-#     --cog_cl 0 \
+#     --sack 0 \
 #     --wandb_entity=shiva-umbc \
 #     --wandb_project=Final-der-cub200-cogcl-mammoth \
 #     --wandb_name=original-run-seed-exemplar500 \
@@ -23,7 +23,7 @@ python main.py \
     --backbone=resnet50 \
     --buffer_size=500 \
     --model_config=best \
-    --cog_cl 1 \
+    --sack 1 \
     --wandb_entity=shiva-umbc \
     --wandb_project=Final-der-cub200-cogcl-mammoth \
     --wandb_name=cogcl-run-seed-exempplar500 \

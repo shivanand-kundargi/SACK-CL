@@ -10,7 +10,7 @@ do
         --model=lwf \
         --lr=0.03\
         --backbone=resnet50 \
-        --cog_cl 0 \
+        --sack 0 \
         --wandb_entity=shiva-umbc \
         --wandb_project=Final-lwf-imagenet-r-cogcl-mammoth \
         --wandb_name=original-run-seed-$seed \

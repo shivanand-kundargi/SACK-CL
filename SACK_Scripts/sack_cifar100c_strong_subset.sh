@@ -77,7 +77,7 @@ done
 
 run_suite() {
   local tag="$1"
-  local cog_flag="$2"
+  local sack_flag="$2"
   local ckpt_assoc_name="$3"
   declare -n ckpts="$ckpt_assoc_name"
 
@@ -105,7 +105,7 @@ run_suite() {
           --loadcheck="${ckpt}" \
           --cifar_c_corruption="${corruption}" \
           --cifar_c_severity="${severity}" \
-          --cog_cl="${cog_flag}" \
+          --sack="${sack_flag}" \
           --sack_scores_type="${SACK_SCORES_TYPE}" \
           --wandb_entity="${WANDB_ENTITY}" \
           --wandb_project="${WANDB_PROJECT_PREFIX}-${tag}-${method}" \

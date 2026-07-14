@@ -233,7 +233,7 @@ def add_initial_args(parser) -> ArgumentParser:
     parser.add_argument('--load_best_args', action='store_true',
                         help='(deprecated) Loads the best arguments for each method, dataset and memory buffer. '
                         'NOTE: This option is deprecated and not up to date.')
-    parser.add_argument('--cog_cl', type=int, choices=(0, 1), default=0, required=True)
+    parser.add_argument('--sack', type=int, choices=(0, 1), default=0, required=True)
     parser.add_argument('--sack_scores_type', type=int, choices=(0, 1, 2, 3, 4), default=0, required=True,
                         help='Legacy SACK schedule selector: 0=w_to_u, 1=u_to_w, 2=u_to_random, 3=wbar_to_u, 4=u_to_wbar.')
     parser.add_argument('--sack_schedule_variant',

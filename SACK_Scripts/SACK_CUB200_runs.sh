@@ -9,7 +9,7 @@ do
         --model=icarl \
         --buffer_size=2000 \
         --model_config=best \
-        --cog_cl 1 \
+        --sack 1 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-icarl-cub200-SACK-mammoth \
@@ -25,7 +25,7 @@ do
         --backbone=resnet50 \
         --buffer_size=500 \
         --model_config=best \
-        --cog_cl 1 \
+        --sack 1 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-der-cub200-SACK-mammoth \
@@ -42,7 +42,7 @@ do
                 --buffer_size=2000 \
                 --backbone=resnet50 \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-derpp-cub200-SACK-mammoth \
@@ -58,7 +58,7 @@ do
                 --model=lwf \
                 --lr=0.03\
                 --backbone=resnet50 \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-lwf-cub200-SACK-mammoth \
@@ -73,7 +73,7 @@ do
                 --dataset=seq-cub200 \
                 --model=coda_prompt \
                 --model_config=best\
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity=abcxyz8431-cl \
                 --wandb_project=Final-coda_prompt-cub200-SACK-mammoth \
@@ -102,7 +102,7 @@ done
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=1 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-icarl-cub200-cogcl-mammoth \
@@ -118,7 +118,7 @@ done
 #     --backbone=resnet50 \
 #     --buffer_size=500 \
 #     --model_config=best \
-#     --cog_cl 1 \
+#     --sack 1 \
 #     --sack_scores_type=1 \
 #     --wandb_entity=abcxyz8431-cl \
 #     --wandb_project=Final-der-cub200-cogcl-mammoth \
@@ -135,7 +135,7 @@ done
 #         --buffer_size=2000 \
 #         --backbone=resnet50 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=1 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-derpp-cub200-cogcl-mammoth \
@@ -150,7 +150,7 @@ done
 #         --model=lwf \
 #         --lr=0.03\
 #         --backbone=resnet50 \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=1 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-lwf-cub200-cogcl-mammoth \
@@ -164,7 +164,7 @@ python main.py \
         --dataset=seq-cub200 \
         --model=coda_prompt \
         --model_config=best\
-        --cog_cl 1 \
+        --sack 1 \
         --sack_scores_type=1 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-coda_prompt-cub200-cogcl-mammoth \
@@ -202,7 +202,7 @@ python main.py \
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=2 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-icarl-cub200-cogcl-mammoth \
@@ -218,7 +218,7 @@ python main.py \
 #     --backbone=resnet50 \
 #     --buffer_size=500 \
 #     --model_config=best \
-#     --cog_cl 1 \
+#     --sack 1 \
 #     --sack_scores_type=2 \
 #     --wandb_entity=abcxyz8431-cl \
 #     --wandb_project=Final-der-cub200-cogcl-mammoth \
@@ -235,7 +235,7 @@ python main.py \
 #         --buffer_size=2000 \
 #         --backbone=resnet50 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=2 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-derpp-cub200-cogcl-mammoth \
@@ -250,7 +250,7 @@ python main.py \
 #         --model=lwf \
 #         --lr=0.03\
 #         --backbone=resnet50 \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --sack_scores_type=2 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-lwf-cub200-cogcl-mammoth \
@@ -264,7 +264,7 @@ python main.py \
         --dataset=seq-cub200 \
         --model=coda_prompt \
         --model_config=best\
-        --cog_cl 1 \
+        --sack 1 \
         --sack_scores_type=2 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-coda_prompt-cub200-cogcl-mammoth \
@@ -295,7 +295,7 @@ python main.py \
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --sack_scores_type=0 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-icarl-cub200-cogcl-mammoth \
@@ -311,7 +311,7 @@ python main.py \
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --sack_scores_type=0 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-icarl-cub200-cogcl-mammoth \
@@ -327,7 +327,7 @@ python main.py \
 #     --backbone=resnet50 \
 #     --buffer_size=500 \
 #     --model_config=best \
-#     --cog_cl 0 \
+#     --sack 0 \
 #     --sack_scores_type=0 \
 #     --wandb_entity=abcxyz8431-cl \
 #     --wandb_project=Final-der-cub200-cogcl-mammoth \
@@ -344,7 +344,7 @@ python main.py \
 #         --buffer_size=2000 \
 #         --backbone=resnet50 \
 #         --model_config=best \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --sack_scores_type=0 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-derpp-cub200-cogcl-mammoth \
@@ -359,7 +359,7 @@ python main.py \
 #         --model=lwf \
 #         --lr=0.003\
 #         --backbone=resnet50 \
-#         --cog_cl 0 \
+#         --sack 0 \
 #         --sack_scores_type=0 \
 #         --wandb_entity=abcxyz8431-cl \
 #         --wandb_project=Final-lwf-cub200-cogcl-mammoth \
@@ -373,7 +373,7 @@ python main.py \
         --dataset=seq-cub200 \
         --model=coda_prompt \
         --model_config=best\
-        --cog_cl 0 \
+        --sack 0 \
         --sack_scores_type=0 \
         --wandb_entity=abcxyz8431-cl \
         --wandb_project=Final-coda_prompt-cub200-cogcl-mammoth \
@@ -392,7 +392,7 @@ python main.py \
 #         --model=icarl \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-icarl-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -421,7 +421,7 @@ python main.py \
 #         --model=gem \
 #         --buffer_size=2000 \
 #         --lr=0.03 \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-gem-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -449,7 +449,7 @@ python main.py \
 #         --model=er \
 #         --buffer_size=2000 \
 #         --lr=0.03 \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-er-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -477,7 +477,7 @@ python main.py \
 #         --model=der \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-der-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -505,7 +505,7 @@ python main.py \
 #         --model=derpp \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-derpp-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -532,7 +532,7 @@ python main.py \
 #         --model=bic \
 #         --buffer_size=2000 \
 #         --model_config=best \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-bic-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -561,7 +561,7 @@ python main.py \
 #         --lr=0.05 \
 #         --gss_minibatch_size=10 \
 #         --batch_size=10 \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-gss-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -591,7 +591,7 @@ python main.py \
 #         --lr=0.03 \
 #         --beta=0.3 \
 #         --gamma=0.1 \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-hal-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -626,7 +626,7 @@ python main.py \
 #         --lr=0.1 \
 #         --beta=0.01 \
 #         --gamma=0.03 \
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-mer-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -652,7 +652,7 @@ python main.py \
 #         --dataset=seq-cub200 \
 #         --model=lwf \
 #         --lr=0.0.\
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-lwf-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -679,7 +679,7 @@ python main.py \
 #         --dataset=seq-cub200 \
 #         --model=coda_prompt \
 #         --model_config=best\
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-coda_prompt-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -707,7 +707,7 @@ python main.py \
 #         --dataset=seq-cub200 \
 #         --model=dualprompt \
 #         --model_config=best\
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-dualprompt-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \
@@ -735,7 +735,7 @@ python main.py \
 #         --dataset=seq-cub200 \
 #         --model=dap \
 #         --model_config=best\
-#         --cog_cl 1 \
+#         --sack 1 \
 #         --wandb_entity=shiva-umbc \
 #         --wandb_project=Final-dap-cub200-cogcl-mammoth \
 #         --wandb_name=cogcl-run-seed-$seed \

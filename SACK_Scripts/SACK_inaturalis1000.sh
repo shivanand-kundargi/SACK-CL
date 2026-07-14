@@ -21,7 +21,7 @@ for seed in "${SEEDS[@]}"; do
                 --model=icarl \
                 --buffer_size=20000 \
                 --model_config=best \
-                --cog_cl 1 \
+                --sack 1 \
                 --sack_scores_type=0 \
                 --wandb_entity="${WANDB_ENTITY}" \
                 --wandb_project="${WANDB_PROJECT}" \
