@@ -30,12 +30,27 @@ Below we layout a comprehensive guide which documents all functionalities availa
 ### Installation
 
 ```bash
-cd SACK
+cd SACK-CL
 pip install -r requirements.txt
 ```
 
 ### Dataset Preparation
-Note that other datasets will be automatically downloaded
+
+Other datasets will be automatically downloaded by their dataset loaders where supported.
+
+#### CUB-200-2011
+```bash
+# Download the official CaltechDATA archive and create the NPZ files
+python scripts/prepare_cub200_npz.py --root data/CUB200
+
+# Or use a pre-downloaded archive on offline compute nodes
+python scripts/prepare_cub200_npz.py \
+    --root data/CUB200 \
+    --archive /path/to/CUB_200_2011.tgz
+```
+
+`seq-cub200` automatically calls this preparation step when NPZ files are missing and download is enabled. The generated `data/CUB200/` files are ignored by git.
+
 #### iNaturalist Dataset
 ```bash
 # One-time setup before running seq-inaturalist experiments
@@ -90,10 +105,39 @@ python main.py \
     --seed=0
 ```
 
+### Sample-Level SACK
+
+By default, SACK computes one concept score per incoming class. The current code also supports sample-level concept weighting, where each training example is scored from its top-k class concepts:
+
+```bash
+python main.py \
+    --dataset=seq-cub200 \
+    --model=icarl \
+    --buffer_size=2000 \
+    --model_config=best \
+    --cog_cl=1 \
+    --sack_schedule_variant=w_to_u \
+    --sack_weight_granularity=sample \
+    --sack_sample_topk_concepts=5 \
+    --sack_sample_score_batch_size=128 \
+    --sack_aggregation=max-mean \
+    --enable_other_metrics=True \
+    --permute_classes=True \
+    --log_perf_metrics=1 \
+    --seed=0
+```
+
 ### Key Parameters
 
-- `--cog_cl`: Enable (1) or disable (0) SACK
-- `--sack_scores_type`: Type of SACK scoring (0=default, 1=uniform-to-weights, 2=alternative)
+- `--cog_cl`: Enable (1) or disable (0) SACK/CoG-CL
+- `--sack_scores_type`: Legacy schedule selector (`0=w_to_u`, `1=u_to_w`, `2=u_to_random`, `3=wbar_to_u`, `4=u_to_wbar`)
+- `--sack_schedule_variant`: Explicit schedule variant. Supported values are `w_to_u`, `u_to_w`, `wbar_to_u`, `u_to_wbar`, `u_to_random`, `u_to_random_fixed`, and `random_to_u`
+- `--sack_weight_granularity`: Use `class` weights or `sample` weights
+- `--sack_aggregation`: Similarity aggregation for concept scores. Supported values are `max-mean`, `mean-mean`, `min-mean`, `top3-mean`, `top5-mean`, `softmax-sharp`, `softmax-smooth`, and `max-max`
+- `--sack_similarity_percentile`: Percentile threshold used to keep high-confidence dissected concepts
+- `--sack_sample_topk_concepts`: Number of image-aligned class concepts used for sample-level SACK
+- `--sack_sample_score_batch_size`: Batch size used while encoding images for sample-level scores
+- `--sack_sample_dump_dictionary`: Save the sample-to-concepts dictionary in the SACK cache
 - `--dataset`: Dataset identifier (see [Supported Datasets](#supported-datasets))
 - `--model`: Model architecture (see [Supported Models](#supported-models))
 - `--seed`: Random seed for reproducibility
@@ -121,6 +165,9 @@ python main.py \
 ```bash
 # Run specific models on CIFAR-100
 ./SACK_Scripts/SACK_CIFAR100_runs.sh
+
+# Run schedule-variant sweeps and optionally analyze outputs
+./SACK_Scripts/run_sack_cifar100_schedule_variants.sh
 ```
 
 ### CUB-200
@@ -138,6 +185,9 @@ python main.py \
 ```bash
 # Process multiple classes for visualization
 ./run_cub200_batch.sh
+
+# Compare class-level and sample-level SACK weighting
+./SACK_Scripts/run_sack_sample_weighting_cub200.sh
 ```
 
 ### ImageNet-R
@@ -265,9 +315,64 @@ Evaluate on a strong subset of CIFAR-100-C:
 ./SACK_Scripts/sack_cifar100c_strong_subset.sh
 ```
 
+### Schedule Variant Analysis
+
+Aggregate CIFAR-100 schedule sweeps into CSV, Markdown, and PDF summaries:
+
+```bash
+python SACK_Scripts/analyze_sack_cifar100_schedule_variants.py \
+    --results-root data/results/sack_cifar100_schedule_variants_standard
+```
+
+### Sample Weighting Result Tables
+
+Parse class-level vs sample-level SACK runs into rebuttal-ready CSV and Markdown tables:
+
+```bash
+python SACK_Scripts/parse_sample_weighting_results.py \
+    --results-root data/results/sack_sample_weighting_cub200
+```
+
+### Aggregation Ablation
+
+Run and parse aggregation ablations for SACK concept scoring:
+
+```bash
+./SACK_Scripts/run_aggregation_ablation.sh
+python SACK_Scripts/parse_aggregation_results.py
+```
+
+### Concept Generation Cost Analysis
+
+Generate concept banks with a local Transformers/OpenAI-compatible backend and summarize preprocessing cost:
+
+```bash
+# Local or Hugging Face model path
+SACK_LLM_MODEL=openai/gpt-oss-120b \
+./SACK_Scripts/run_rebuttal_w3_concept_generation_cost.sh
+
+# OpenAI API subset with cost extrapolation
+OPENAI_API_KEY=... \
+./SACK_Scripts/run_rebuttal_w3_openai_api_cost_subset.sh
+```
+
 ---
 
 ## Advanced Features
+
+### SACK Schedules and Aggregation
+
+SACK schedules interpolate the sampler between concept-derived weights, uniform weights, inverted weights, and random weights:
+
+- `w_to_u`: concept weights to uniform
+- `u_to_w`: uniform to concept weights
+- `wbar_to_u`: inverted concept weights to uniform
+- `u_to_wbar`: uniform to inverted concept weights
+- `u_to_random`: uniform to per-epoch random weights
+- `u_to_random_fixed`: uniform to fixed random weights
+- `random_to_u`: fixed random weights to uniform
+
+The `--sack_aggregation` option controls how previous-task concept activations are compared to incoming-class concepts. Use `run_aggregation_ablation.sh` to compare the available aggregation modes.
 
 ### Uncertainty-Based Sampling
 
@@ -327,6 +432,15 @@ This script runs experiments with different class orders to evaluate robustness 
 #### Reverse Scores Ablation
 ```bash
 ./SACK_Scripts/ablation_SACK_CIFAR100_reversescores.sh
+```
+
+#### Q1 Sample vs Class Rebuttal
+```bash
+# CIFAR-100 iCaRL baseline, class-level SACK, and sample-level SACK
+./SACK_Scripts/run_rebuttal_q1_sample_vs_class_cifar100_icarl.sh
+
+# Compatibility wrapper that delegates to the CIFAR-100 launcher
+./SACK_Scripts/run_rebuttal_q1_sample_vs_class_cub200_icarl.sh
 ```
 
 ---
@@ -610,6 +724,13 @@ python -c "import torch; print(torch.cuda.is_available())"
 - `SACK_ECE.py`: ECE computation utility
 - `gradcamviz.py`: Grad-CAM visualization tool
 - `metriccc.py`: Additional metrics computation
+- `scripts/prepare_cub200_npz.py`: CUB-200-2011 archive downloader and NPZ builder
+- `SACK_Scripts/analyze_sack_cifar100_schedule_variants.py`: Schedule sweep parser and plot generator
+- `SACK_Scripts/parse_sample_weighting_results.py`: Class/sample weighting table builder
+- `SACK_Scripts/parse_aggregation_results.py`: Aggregation ablation parser
+- `SACK_Scripts/generate_concept_costs.py`: Concept-bank generation with preprocessing cost accounting
+- `SACK_Scripts/generate_concepts_simple.py`: Lightweight concept generation utility
+- `SACK_Scripts/analyze_openai_cost_subset.py`: OpenAI API subset cost extrapolation
 
 ### Script Directories
 
@@ -665,6 +786,12 @@ export ICARL_SACK_CKPT=checkpoints/icarl-cifar100-sack-seed-0_final.pt
 # Threshold sweep
 ./SACK_Scripts/sack_cifar100_threshold_sweep.sh
 
+# Schedule variants
+./SACK_Scripts/run_sack_cifar100_schedule_variants.sh
+
+# Aggregation variants
+./SACK_Scripts/run_aggregation_ablation.sh
+
 # Multiple seeds
 for seed in 0 1 2 3 4; do
     SEED=$seed ./SACK_Scripts/SACK_CIFAR-100_RUNTIME.sh
@@ -698,6 +825,7 @@ For issues or questions:
 - Default WandB entity: `abcxyz8431-cl` (modify as needed)
 - Checkpoint naming convention: `{model}-{dataset}-{variant}-seed-{seed}`
 - Most scripts support environment variable overrides
+- Generated datasets, Hugging Face caches, local Python dependency caches, and Unsloth compiled caches are ignored by git
 - GPU assignments in parallel scripts may need adjustment for your system
 
 ---
@@ -709,4 +837,3 @@ This repository is built upon [Mammoth](https://github.com/aimagelab/mammoth), a
 **Mammoth Contributors:**
 - Lorenzo Bonicelli, Pietro Buzzega, Matteo Boschini, Angelo Porrello, Simone Calderara
 - Original Mammoth repository: https://github.com/aimagelab/mammoth
-

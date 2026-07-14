@@ -1,9 +1,11 @@
 import os
+import importlib.util
 import numpy as np
 import torch
 import torchvision.transforms as transforms
 import torch.nn.functional as F
 from PIL import Image
+from pathlib import Path
 from typing import Tuple
 from datasets.utils import set_default_from_args
 from datasets.utils.continual_dataset import ContinualDataset, fix_class_names_order, store_masked_loaders
@@ -12,6 +14,54 @@ from utils import smart_joint
 from utils.conf import base_path
 from torch.utils.data import Dataset
 from torchvision.transforms.functional import InterpolationMode
+
+
+def _cub_npz_ready(root: str) -> bool:
+    return os.path.isfile(os.path.join(root, 'train_data.npz')) and os.path.isfile(os.path.join(root, 'test_data.npz'))
+
+
+def _prepare_cub_npz(root: str, force: bool = False) -> None:
+    script_path = Path(__file__).resolve().parents[1] / 'scripts' / 'prepare_cub200_npz.py'
+    spec = importlib.util.spec_from_file_location("prepare_cub200_npz", script_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Could not load CUB preparation script at {script_path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    module.prepare(root=Path(root), force=force)
+
+
+def _load_cub_npz(root: str, train: bool, download: bool):
+    split_file = 'train_data.npz' if train else 'test_data.npz'
+    npz_path = smart_joint(root, split_file)
+    try:
+        return np.load(npz_path, allow_pickle=True)
+    except ModuleNotFoundError as exc:
+        if exc.name != 'numpy._core' or not download:
+            raise
+        print('CUB-200 NPZ files were written by an incompatible NumPy version; rebuilding with this Python.')
+        _prepare_cub_npz(root, force=True)
+        return np.load(npz_path, allow_pickle=True)
+
+
+def _load_cub_arrays(root: str, train: bool, download: bool):
+    data_file = _load_cub_npz(root, train=train, download=download)
+    data = data_file['data']
+    if getattr(data, 'ndim', None) != 4:
+        if not download:
+            raise RuntimeError(
+                f"CUB-200 data in {root} has shape {getattr(data, 'shape', None)}; "
+                "expected a fixed-size 4D uint8 array."
+            )
+        print('CUB-200 NPZ files use the old object-array format; rebuilding fixed-size arrays for replay.')
+        _prepare_cub_npz(root, force=True)
+        data_file = _load_cub_npz(root, train=train, download=False)
+        data = data_file['data']
+        if getattr(data, 'ndim', None) != 4:
+            raise RuntimeError(
+                f"CUB-200 rebuild produced shape {getattr(data, 'shape', None)}; expected a 4D uint8 array."
+            )
+    return data_file, data
+
 
 class MyCUB200(Dataset):
     """
@@ -22,7 +72,7 @@ class MyCUB200(Dataset):
     def __init__(self, root, train=True, transform=None,
                  target_transform=None, download=True) -> None:
         self.not_aug_transform = transforms.Compose([
-            transforms.Resize(MyCUB200.IMG_SIZE, interpolation=InterpolationMode.BICUBIC),
+            transforms.Resize((MyCUB200.IMG_SIZE, MyCUB200.IMG_SIZE), interpolation=InterpolationMode.BICUBIC),
             transforms.ToTensor()])
         self.root = root
         self.train = train
@@ -30,18 +80,30 @@ class MyCUB200(Dataset):
         self.target_transform = target_transform
         self.download = download
 
-        if download:
-            if os.path.isdir(root) and len(os.listdir(root)) > 0:
-                print('Download not needed, files already on disk.')
-            else:
-                from onedrivedownloader import download
-                ln = '<iframe src="https://onedrive.live.com/embed?cid=D3924A2D106E0039&resid=D3924A2D106E0039%21110&authkey=AIEfi5nlRyY1yaE" width="98" height="120" frameborder="0" scrolling="no"></iframe>'
-                print('Downloading dataset')
-                download(ln, filename=smart_joint(root, 'cub_200_2011.zip'), unzip=True, unzip_path=root, clean=True)
+        if download and not _cub_npz_ready(root):
+            print('Preparing CUB-200-2011 NPZ files from the official CaltechDATA archive.')
+            try:
+                _prepare_cub_npz(root)
+            except Exception as exc:
+                raise RuntimeError(
+                    "CUB-200-2011 data is missing and automatic preparation failed. "
+                    f"Expected {smart_joint(root, 'train_data.npz')} and {smart_joint(root, 'test_data.npz')}. "
+                    "You can prepare them manually with: "
+                    f"python scripts/prepare_cub200_npz.py --root {root}. "
+                    "If the compute node has no internet, download CUB_200_2011.tgz from "
+                    "https://data.caltech.edu/records/65de6-vp158 and run the same command with "
+                    "--archive /path/to/CUB_200_2011.tgz."
+                ) from exc
 
-        data_file = np.load(smart_joint(root, 'train_data.npz' if train else 'test_data.npz'), allow_pickle=True)
+        if not _cub_npz_ready(root):
+            raise FileNotFoundError(
+                f"CUB-200-2011 NPZ files not found in {root}. Run "
+                f"`python scripts/prepare_cub200_npz.py --root {root}` first."
+            )
 
-        self.data = data_file['data']
+        data_file, data = _load_cub_arrays(root, train=train, download=download)
+
+        self.data = data
         self.targets = torch.from_numpy(data_file['targets']).long()
         self.classes = data_file['classes']
         self.segs = data_file['segs']

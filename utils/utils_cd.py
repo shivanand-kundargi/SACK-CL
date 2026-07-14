@@ -2,6 +2,7 @@ import sys
 sys.path.insert(0, "/g/g91/kundargi1/SACK")
 import os
 import math
+import logging
 import numpy as np
 import torch
 import clip
@@ -10,6 +11,37 @@ from torch.utils.data import DataLoader
 from utils import data_utils
 
 PM_SUFFIX = {"max":"_max", "avg":""}
+
+
+def _atomic_torch_save(obj, save_name):
+    _make_save_dir(save_name)
+    tmp_name = f"{save_name}.tmp.{os.getpid()}"
+    if os.path.exists(tmp_name):
+        os.remove(tmp_name)
+    torch.save(obj, tmp_name)
+    os.replace(tmp_name, save_name)
+
+
+def _can_load_torch_file(save_name):
+    if not os.path.exists(save_name):
+        return False
+    if os.path.isdir(save_name):
+        return False
+    try:
+        loaded_obj = torch.load(save_name, map_location='cpu')
+        del loaded_obj
+        return True
+    except Exception as exc:
+        logging.warning("SACK: invalid cache file %s (%s); rebuilding it", save_name, exc)
+        return False
+
+
+def _invalidate_cache_file(save_name):
+    if os.path.exists(save_name):
+        try:
+            os.remove(save_name)
+        except OSError as exc:
+            logging.warning("SACK: could not remove invalid cache file %s (%s)", save_name, exc)
 
 def get_activation(outputs, mode):
     '''
@@ -56,7 +88,11 @@ def save_target_activations(target_model, dataset, save_name, target_layers = ["
         save_names[target_layer] = save_name.format(target_layer)
         
     if _all_saved(save_names):
+        logging.info("SACK: reusing cached target activations from %s", save_name)
         return
+    for target_layer, layer_save_name in save_names.items():
+        if os.path.exists(layer_save_name):
+            _invalidate_cache_file(layer_save_name)
     
     all_features = {target_layer:[] for target_layer in target_layers}
     
@@ -64,20 +100,24 @@ def save_target_activations(target_model, dataset, save_name, target_layers = ["
     for target_layer in target_layers:
         command = "target_model.{}.register_forward_hook(get_activation(all_features[target_layer], pool_mode))".format(target_layer)
         hooks[target_layer] = eval(command)
-    
+
+    sample = dataset[0]
+    has_extra_metadata = isinstance(sample, (tuple, list)) and len(sample) == 4
+    data_loader = DataLoader(dataset, batch_size, num_workers=0, pin_memory=True)
+
     with torch.no_grad():
-        if len(next(iter(DataLoader(dataset, batch_size, num_workers=4, pin_memory=True))))==4:
-            for images, labels, task_id,_ in tqdm(DataLoader(dataset, batch_size, num_workers=8, pin_memory=True)):
+        if has_extra_metadata:
+            for images, labels, task_id,_ in tqdm(data_loader):
                 features = target_model(images.to(device))
         else :
-            for images, labels, task_id in tqdm(DataLoader(dataset, batch_size, num_workers=8, pin_memory=True)):
+            for images, labels, task_id in tqdm(data_loader):
                 features = target_model(images.to(device))
 
     
     for target_layer in target_layers:
         # print("saving", target_layer)
         # import pdb; pdb.set_trace()
-        torch.save(torch.cat(all_features[target_layer]), save_names[target_layer])
+        _atomic_torch_save(torch.cat(all_features[target_layer]), save_names[target_layer])
         hooks[target_layer].remove()
     #free memory
     del all_features
@@ -89,45 +129,51 @@ def save_clip_image_features(model, dataset, save_name, batch_size=1000 , device
     _make_save_dir(save_name)
     all_features = []
     
-    if os.path.exists(save_name):
+    if _can_load_torch_file(save_name):
+        logging.info("SACK: reusing cached CLIP image features from %s", save_name)
         return
+    _invalidate_cache_file(save_name)
     
     save_dir = save_name[:save_name.rfind("/")]
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
+
+    sample = dataset[0]
+    has_extra_metadata = isinstance(sample, (tuple, list)) and len(sample) == 4
+    data_loader = DataLoader(dataset, batch_size, num_workers=0, pin_memory=True)
+
     with torch.no_grad():
-        # print("datsset length",len(next(iter(DataLoader(dataset, batch_size, num_workers=4, pin_memory=True)))))
-        if len(next(iter(DataLoader(dataset, batch_size, num_workers=4, pin_memory=True))))==4:
-            for images, labels,task_id,_ in tqdm(DataLoader(dataset, batch_size, num_workers=4, pin_memory=True)):
+        if has_extra_metadata:
+            for images, labels,task_id,_ in tqdm(data_loader):
                 if images.shape[1] == 1:
                     images = images.repeat(1,3,1,1)
-                print("helloooooooo", images.shape)
                 features = model.encode_image(images.to(device))
                 all_features.append(features)
         else :
-            for images, labels,task_id in tqdm(DataLoader(dataset, batch_size, num_workers=4, pin_memory=True)):
-                print("helloooooooo", images.shape)
+            for images, labels,task_id in tqdm(data_loader):
                 features = model.encode_image(images.to(device))
 
             
                 all_features.append(features)
     # import pdb; pdb.set_trace()        
-    torch.save(torch.cat(all_features), save_name)
+    _atomic_torch_save(torch.cat(all_features), save_name)
     #free memory
     del all_features
     torch.cuda.empty_cache()
     return
 
 def save_clip_text_features(model, text, save_name, batch_size=1000):
-    if os.path.exists(save_name):
+    if _can_load_torch_file(save_name):
+        logging.info("SACK: reusing cached CLIP text features from %s", save_name)
         return
+    _invalidate_cache_file(save_name)
     _make_save_dir(save_name)
     text_features = []
     with torch.no_grad():
         for i in tqdm(range(math.ceil(len(text)/batch_size))):
             text_features.append(model.encode_text(text[batch_size*i:batch_size*(i+1)]))
     text_features = torch.cat(text_features, dim=0)
-    torch.save(text_features, save_name)
+    _atomic_torch_save(text_features, save_name)
     del text_features
     torch.cuda.empty_cache()
     return
@@ -146,6 +192,7 @@ def get_clip_text_features(model, text, batch_size=1000):
 def save_activations(clip_name, protocol, target_name, target_layers, d_probe, experience_num, model,
                      concept_set, batch_size, device, pool_mode, save_dir):
     
+    logging.info("SACK: preparing activation cache in %s", save_dir)
     clip_model, clip_preprocess = clip.load(clip_name, device=device)
     target_model, target_preprocess = data_utils.get_target_model(target_name,experience_num-1, model, device)
     #setup data
@@ -164,8 +211,11 @@ def save_activations(clip_name, protocol, target_name, target_layers, d_probe, e
                                 pool_mode=pool_mode, save_dir = save_dir)
     target_save_name, clip_save_name, text_save_name = save_names
     
+    logging.info("SACK: encoding concept text features")
     save_clip_text_features(clip_model, text, text_save_name, batch_size)
+    logging.info("SACK: encoding CLIP image features")
     save_clip_image_features(clip_model, data_c, clip_save_name, batch_size, device)
+    logging.info("SACK: extracting target network activations")
     save_target_activations(target_model, data_t, target_save_name, target_layers,
                             batch_size, device, pool_mode)
     return
@@ -173,6 +223,10 @@ def save_activations(clip_name, protocol, target_name, target_layers, d_probe, e
 def get_similarity_from_activations(target_save_name, clip_save_name, text_save_name, similarity_fn, 
                                    return_target_feats=True, device="cuda"):
     
+    logging.info("SACK: loading cached activations and computing similarities")
+    for save_name in (clip_save_name, text_save_name, target_save_name):
+        if not _can_load_torch_file(save_name):
+            raise RuntimeError(f"SACK cache file is missing or invalid and needs to be rebuilt: {save_name}")
     image_features = torch.load(clip_save_name, map_location='cpu').float()
     text_features = torch.load(text_save_name, map_location='cpu').float()
     with torch.no_grad():
@@ -232,7 +286,7 @@ def _all_saved(save_names):
     else Returns False
     """
     for save_name in save_names.values():
-        if not os.path.exists(save_name):
+        if not _can_load_torch_file(save_name):
             return False
     return True
 
@@ -245,6 +299,3 @@ def _make_save_dir(save_name):
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
     return
-
-    
-    

@@ -9,7 +9,7 @@ import os
 import sys
 import time
 from argparse import Namespace
-from typing import Iterable
+from typing import Iterable, Optional, Tuple
 import logging
 import torch
 import torch.nn.functional as F
@@ -70,8 +70,10 @@ class RuntimeMetricsTracker:
             return
         self._current = {
             'task_index': task_idx,
+            '_task_start_time': time.perf_counter(),
             'train_time_s': 0.0,
             'eval_time_s': 0.0,
+            'task_time_s': 0.0,
             'train_gflops': None,
             'train_gflops_per_sample': None,
             '_gflops_measured': False
@@ -146,10 +148,12 @@ class RuntimeMetricsTracker:
         if not self.enabled or self._current is None:
             return
         record = self._current.copy()
+        record['task_time_s'] = time.perf_counter() - record.pop('_task_start_time')
         record.pop('_gflops_measured', None)
         self.records.append(record)
         task_display = record['task_index'] + 1
         log_msg = (f"[Runtime] Task {task_display}: "
+                   f"total_time={record['task_time_s']:.2f}s, "
                    f"train_time={record['train_time_s']:.2f}s, "
                    f"eval_time={record['eval_time_s']:.2f}s")
         if record['train_gflops'] is not None:
@@ -173,11 +177,22 @@ class RuntimeMetricsTracker:
         logging.info("===== Runtime Summary =====")
         for r in self.records:
             task_display = r['task_index'] + 1
-            msg = (f"Task {task_display}: train_time={r['train_time_s']:.2f}s | "
+            msg = (f"Task {task_display}: total_time={r['task_time_s']:.2f}s | "
+                   f"train_time={r['train_time_s']:.2f}s | "
                    f"eval_time={r['eval_time_s']:.2f}s")
             if r['train_gflops'] is not None:
                 msg += f" | iter_gflops={r['train_gflops']:.3f}"
             logging.info(msg)
+
+    def attach_to_args(self) -> None:
+        if not self.enabled or not self.records:
+            return
+        self.args.runtime_task_time_s = [float(r['task_time_s']) for r in self.records]
+        self.args.runtime_train_time_s = [float(r['train_time_s']) for r in self.records]
+        self.args.runtime_eval_time_s = [float(r['eval_time_s']) for r in self.records]
+        self.args.runtime_total_wall_time_s = float(sum(self.args.runtime_task_time_s))
+        self.args.runtime_total_train_time_s = float(sum(self.args.runtime_train_time_s))
+        self.args.runtime_total_eval_time_s = float(sum(self.args.runtime_eval_time_s))
 
 
 class _NullContext:
@@ -313,6 +328,119 @@ class UncertaintyBasedSampler(torch.utils.data.Sampler[int]):
         return self.num_samples
 
 
+SACK_SCHEDULE_VARIANTS = (
+    'w_to_u',
+    'u_to_w',
+    'wbar_to_u',
+    'u_to_wbar',
+    'u_to_random',
+    'u_to_random_fixed',
+    'random_to_u',
+)
+
+LEGACY_SACK_SCORE_TYPE_MAP = {
+    0: 'w_to_u',
+    1: 'u_to_w',
+    2: 'u_to_random',
+    3: 'wbar_to_u',
+    4: 'u_to_wbar',
+}
+
+
+def _resolve_sack_schedule_variant(args: Namespace) -> str:
+    explicit_variant = getattr(args, 'sack_schedule_variant', None)
+    if explicit_variant is not None:
+        variant = str(explicit_variant).strip().lower().replace('-', '_')
+        if variant not in SACK_SCHEDULE_VARIANTS:
+            raise ValueError(f"Unsupported SACK schedule variant: {explicit_variant}")
+        return variant
+
+    score_type = int(getattr(args, 'sack_scores_type', 0))
+    if score_type not in LEGACY_SACK_SCORE_TYPE_MAP:
+        raise ValueError(f"Unsupported legacy SACK score type: {score_type}")
+    return LEGACY_SACK_SCORE_TYPE_MAP[score_type]
+
+
+def _sanitize_nonnegative_weights(values: torch.Tensor) -> torch.Tensor:
+    weights = values.clone().detach().float()
+    weights = torch.nan_to_num(weights, nan=0.0, posinf=0.0, neginf=0.0)
+    min_val = weights.min()
+    if min_val < 0:
+        weights = weights - min_val
+    if not torch.isfinite(weights).all() or weights.numel() == 0:
+        return torch.ones_like(weights)
+    if torch.all(weights <= 0):
+        return torch.ones_like(weights)
+    return weights
+
+
+def _minmax_normalize(values: torch.Tensor) -> torch.Tensor:
+    weights = _sanitize_nonnegative_weights(values)
+    max_val = weights.max()
+    min_val = weights.min()
+    denom = max_val - min_val
+    if not torch.isfinite(denom) or denom.item() <= 0:
+        return torch.zeros_like(weights)
+    return (weights - min_val) / denom
+
+
+def _get_linear_interpolation_lambda(epoch: int, total_epochs: int) -> float:
+    if total_epochs <= 1:
+        return 0.0
+    return float(epoch) / float(total_epochs - 1)
+
+
+def _build_sack_schedule_anchors(scores,
+                                 num_classes: int,
+                                 schedule_variant: str,
+                                 seed: Optional[int],
+                                 task_index: int) -> Tuple[torch.Tensor, torch.Tensor]:
+    concept_weights = _sanitize_nonnegative_weights(torch.as_tensor(scores, dtype=torch.float))
+    if concept_weights.numel() != num_classes:
+        raise ValueError(
+            f"SACK score count ({concept_weights.numel()}) does not match the current number of classes ({num_classes})."
+        )
+
+    uniform_weights = torch.full((num_classes,), 1.0 / float(num_classes), dtype=torch.float)
+    inverted_weights = 1.0 - _minmax_normalize(concept_weights)
+    inverted_weights = _sanitize_nonnegative_weights(inverted_weights)
+    base_seed = 0 if seed is None else int(seed)
+    fixed_random_generator = torch.Generator()
+    fixed_random_generator.manual_seed(base_seed + 104729 * (task_index + 1))
+    fixed_random_weights = _sanitize_nonnegative_weights(
+        torch.rand(num_classes, generator=fixed_random_generator, dtype=torch.float)
+    )
+
+    if schedule_variant == 'w_to_u':
+        return concept_weights, uniform_weights
+    if schedule_variant == 'u_to_w':
+        return uniform_weights, concept_weights
+    if schedule_variant == 'wbar_to_u':
+        return inverted_weights, uniform_weights
+    if schedule_variant == 'u_to_wbar':
+        return uniform_weights, inverted_weights
+    if schedule_variant == 'u_to_random':
+        return uniform_weights, uniform_weights
+    if schedule_variant == 'u_to_random_fixed':
+        return uniform_weights, fixed_random_weights
+    if schedule_variant == 'random_to_u':
+        return fixed_random_weights, uniform_weights
+
+    raise ValueError(f"Unsupported SACK schedule variant: {schedule_variant}")
+
+
+def _sample_epoch_random_weights(num_classes: int) -> torch.Tensor:
+    return _sanitize_nonnegative_weights(torch.rand(num_classes, dtype=torch.float))
+
+
+def _interpolate_sack_probabilities(start_probs: torch.Tensor,
+                                    end_probs: torch.Tensor,
+                                    epoch: int,
+                                    total_epochs: int) -> torch.Tensor:
+    lambda_g = _get_linear_interpolation_lambda(epoch, total_epochs)
+    return ((1.0 - lambda_g) * start_probs) + (lambda_g * end_probs)
+
+
 def train_single_epoch(model: ContinualModel,
                        train_loader: Iterable,
                        args: Namespace,
@@ -407,6 +535,13 @@ def train(model: ContinualModel, dataset: ContinualDataset,
         dataset: the continual dataset at hand
         args: the arguments of the current execution
     """
+    args.sack_schedule_variant = _resolve_sack_schedule_variant(args)
+    args.sack_effective_variant = args.sack_schedule_variant if int(getattr(args, 'cog_cl', 0)) == 1 else 'baseline'
+    args.sack_weight_granularity = str(getattr(args, 'sack_weight_granularity', 'class')).strip().lower().replace('-', '_')
+    if args.sack_weight_granularity not in ('class', 'sample'):
+        raise ValueError(f"Unsupported SACK weight granularity: {args.sack_weight_granularity}")
+    args.sack_effective_granularity = args.sack_weight_granularity if int(getattr(args, 'cog_cl', 0)) == 1 else 'none'
+
     print(args)
 
     is_fwd_enabled = False
@@ -420,8 +555,11 @@ def train(model: ContinualModel, dataset: ContinualDataset,
         logger = Logger(args, dataset.SETTING, dataset.NAME, model.NAME)
 
     model.net.to(model.device)
-    clip_model, clip_preprocess = clip.load("ViT-B/32", device=model.device)    
-    torch.cuda.empty_cache()
+    clip_model = None
+    if int(getattr(args, 'cog_cl', 0)) == 1:
+        clip_model, _ = clip.load("ViT-B/32", device=model.device)
+        if model.device.type == 'cuda':
+            torch.cuda.empty_cache()
     perf_tracker = RuntimeMetricsTracker(args)
 
     with track_system_stats(logger) as system_tracker:
@@ -537,6 +675,11 @@ def train(model: ContinualModel, dataset: ContinualDataset,
                 if args.non_verbose:
                     logging.info(f"Task {t + 1}")  # at least print the task number
                 class_grad_scale = None
+                sack_start_probs = None
+                sack_end_probs = None
+                each_labels = None
+                up_task_labels = None
+                sack_weight_granularity = getattr(args, "sack_weight_granularity", "class")
                 if args.cog_cl==1 and t>0:
                         if args.dataset =='seq-cifar100' or  args.dataset =='seq-cifar100-224' :
                             concept_dict_path="YOUR_PATH"
@@ -569,13 +712,40 @@ def train(model: ContinualModel, dataset: ContinualDataset,
                         # print("N_classes:", n_classes)
                         # task_labels =args.class_order[t*n_classes:(t+1)*n_classes]
                         # up_task_labels = list(range(t*n_classes,(t+1)*n_classes))
+                        logging.info("SACK: preparing concept scores for task %s", t + 1)
+                        logging.info("SACK: copying model for concept dissection")
                         model_copy=copy.deepcopy(model.net)
                         IcarlDissect_Score = IcarlDissectandScore(args=args, model=model_copy, protocol=train_loader.dataset, similarity_fn= similarity.soft_wpmi, class_order=args.class_order, curent_experience=t, current_experience_classes=task_labels, device=model.device)
+                        logging.info("SACK: running network dissection for task %s", t + 1)
                         IcarlDissect_Score.dissect("ours_saved_activation")
-                        scores = IcarlDissect_Score.scoring_function(clip_model=clip_model, filtered_concept_set=None, next_exp_concept_set_path=concept_dict_path, indices=task_labels, device=model.device)
+                        if sack_weight_granularity == "sample":
+                            logging.info("SACK: computing sample-level concept similarity scores for task %s", t + 1)
+                            scores, _ = IcarlDissect_Score.sample_scoring_function(
+                                clip_model=clip_model,
+                                next_exp_concept_set_path=concept_dict_path,
+                                indices=task_labels,
+                                labels=each_labels,
+                                class_labels=up_task_labels,
+                                device=model.device,
+                                topk=getattr(args, "sack_sample_topk_concepts", 5)
+                            )
+                            score_item_count = len(each_labels)
+                        else:
+                            logging.info("SACK: computing class-level concept similarity scores for task %s", t + 1)
+                            scores = IcarlDissect_Score.scoring_function(clip_model=clip_model, filtered_concept_set=None, next_exp_concept_set_path=concept_dict_path, indices=task_labels, device=model.device)
+                            scores = [float(score.item()) if isinstance(score, torch.Tensor) else float(score) for score in scores]
+                            score_item_count = len(up_task_labels)
+                        logging.info("SACK: finished %s-level concept similarity scores for task %s", sack_weight_granularity, t + 1)
+                        sack_start_probs, sack_end_probs = _build_sack_schedule_anchors(
+                            scores=scores,
+                            num_classes=score_item_count,
+                            schedule_variant=args.sack_schedule_variant,
+                            seed=args.seed,
+                            task_index=t
+                        )
 
                         # Build per-class gradient scaling factors from concept similarity scores
-                        if getattr(args, "weighted_gradient", 0) and scores is not None:
+                        if sack_weight_granularity == "class" and getattr(args, "weighted_gradient", 0) and scores is not None:
                             with torch.no_grad():
                                 scores_t = torch.tensor(scores, dtype=torch.float, device=model.device)
                                 # Normalize scores to [0, 1] to interpret them as similarities
@@ -594,58 +764,32 @@ def train(model: ContinualModel, dataset: ContinualDataset,
                 while True:
 
                     if args.cog_cl==1 and t>0:
-                        # if args.dataset=="perm-mnist":
-                        #     each_labels = [train_loader.dataset[i][1] for i in range(len(train_loader.dataset))]
-                        # else:
-                        # each_labels = [train_loader.dataset[i][1].item() for i in range(len(train_loader.dataset))]
-                        # # print("Each_labels:", each_labels)
-                        # # print(args.dataset)
-                        # n_classes = int(len(np.unique(np.array(each_labels))))
-                        # task_labels =args.class_order[t*10:(t+1)*10]
-                        # up_task_labels = list(range(t*10,(t+1)*10))
-                        # print("Task_labels:", task_labels)  
-                        # print("Up_task_labels:", up_task_labels)
-                        # if args.dataset=="perm-mnist":
-                        #     task_labels = args.class_order
-                        #     up_task_labels = list(range(0,10))
-
-                        # if args.dataset=="seq-cifar10":
-                        #     task_labels = args.class_order[t*2:(t+1)*2]
-                        #     up_task_labels = list(range(t*2,(t+1)*2)
-                        #     )    
-                        
-                        # print("Scores:", scores)
-                        # print("labels",up_task_labels)
-                        # scores = scores.tolist()
-                        scores = torch.tensor(scores, dtype=torch.float)
-                        # scores = rank_based_normalize(scores)
-                        scores = [score.item() for score in scores]
-                            
-                        scores_dict = dict(zip(up_task_labels, scores))
-                        # print("Scores_dict:", scores_dict)
-                        #SACK(W->U)
-                        if args.sack_scores_type ==0:
-                            per_label_weights  = [(scores_dict[j] *(1-  (epoch/(args.n_epochs-1)) ) )  + ((epoch/(args.n_epochs-1))*(1/n_classes)) for j in up_task_labels]
-                        #SACK(U->W)
-                        elif args.sack_scores_type ==1:
-                            per_label_weights = [((1/n_classes) *(1-  (epoch/(args.n_epochs-1)) ) )  + ((epoch/(args.n_epochs-1))* scores_dict[j]) for j in up_task_labels]
-                        #random scores
-                        elif args.sack_scores_type ==2:
-                            random_scores = [np.random.uniform(0, 1) for j in task_labels]
-                            random_scores_dict = dict(zip(task_labels, random_scores))
-                            # print("random scores:",random_scores_dict)
-                            per_label_weights = [((1/n_classes) *(1-  (epoch/(args.n_epochs-1)) ) )  + ((epoch/(args.n_epochs-1))* random_scores_dict[j]) for j in up_task_labels]
-                            
-                        per_label_weights_dict = dict(zip(up_task_labels, per_label_weights))
-                        sample_weights = []
-                        # I am assigning the weights to the each samples based on the scores of the concepts
-                        for label in each_labels:
-                            if label in up_task_labels:
-                                # print("0:yess")
-                                sample_weights.append(per_label_weights_dict[label])
-                            else:
-                                sample_weights.append(1)
+                        sack_epoch_end_probs = sack_end_probs
+                        if args.sack_schedule_variant == 'u_to_random':
+                            sack_epoch_end_probs = _sample_epoch_random_weights(len(sack_end_probs))
+                        current_task_probs = _interpolate_sack_probabilities(
+                            start_probs=sack_start_probs,
+                            end_probs=sack_epoch_end_probs,
+                            epoch=epoch,
+                            total_epochs=args.n_epochs
+                        )
                         base_dataset = train_loader.dataset
+                        if sack_weight_granularity == "sample":
+                            sample_weights = current_task_probs.tolist()
+                            if len(sample_weights) != len(base_dataset):
+                                raise RuntimeError(
+                                    f"SACK sample weight count ({len(sample_weights)}) does not match dataset size ({len(base_dataset)})."
+                                )
+                        else:
+                            per_label_weights_dict = dict(zip(up_task_labels, current_task_probs.tolist()))
+                            sample_weights = []
+                            # I am assigning the weights to the each samples based on the scores of the concepts
+                            for label in each_labels:
+                                if label in up_task_labels:
+                                    # print("0:yess")
+                                    sample_weights.append(per_label_weights_dict[label])
+                                else:
+                                    sample_weights.append(1)
                         num_workers = getattr(args, "num_workers", 4)
                         if num_workers is None:
                             num_workers = 4
@@ -785,6 +929,7 @@ def train(model: ContinualModel, dataset: ContinualDataset,
         system_tracker.print_stats()
 
     if not args.disable_log:
+        perf_tracker.attach_to_args()
         logger.write(vars(args))
         if not args.nowand:
             d = logger.dump()

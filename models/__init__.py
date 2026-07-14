@@ -22,6 +22,18 @@ def get_all_models() -> List[dict]:
             if not model.find('__') > -1 and not os.path.isdir('models/' + model)}
 
 
+def _load_single_model_class(model_name: str) -> ContinualModel:
+    normalized_name = model_name.replace('_', '-').lower()
+    module_name = normalized_name.replace('-', '_')
+    mod = importlib.import_module('models.' + module_name)
+    model_classes_name = [x for x in mod.__dir__() if 'type' in str(type(getattr(mod, x)))
+                          and 'ContinualModel' in str(inspect.getmro(getattr(mod, x))[1:])]
+    if not model_classes_name:
+        raise KeyError(f'Model `{model_name}` not found in module `models.{module_name}`.')
+    c = getattr(mod, model_classes_name[-1])
+    return c
+
+
 def get_model(args: Namespace, backbone: nn.Module, loss, transform, dataset) -> ContinualModel:
     """
     Return the class of the selected continual model among those that are available.
@@ -62,12 +74,15 @@ def get_model_class(args: Namespace) -> ContinualModel:
     Returns:
         the continual model class
     """
-    names = get_model_names()
     model_name = args.model.replace('_', '-')
-    assert model_name in names
-    if isinstance(names[model_name], Exception):
-        raise names[model_name]
-    return names[model_name]
+    try:
+        return _load_single_model_class(model_name)
+    except Exception:
+        names = get_model_names()
+        assert model_name in names
+        if isinstance(names[model_name], Exception):
+            raise names[model_name]
+        return names[model_name]
 
 
 def get_model_names() -> Dict[str, ContinualModel]:

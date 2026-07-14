@@ -22,6 +22,57 @@ from datasets.utils.continual_dataset import ContinualDataset
 REGISTERED_DATASETS = dict()  # dictionary containing the registered datasets. Template: {name: {'class': class, 'parsable_args': parsable_args}}
 
 
+def _normalize_dataset_name(name: str) -> str:
+    return name.replace('_', '-').lower()
+
+
+def _module_name_from_dataset(name: str) -> str:
+    return _normalize_dataset_name(name).replace('-', '_')
+
+
+def _extract_dataset_entries_from_module(mod, base_class_signature):
+    names = {}
+    dataset_classes_name = [x for x in mod.__dir__() if 'type' in str(type(getattr(mod, x)))
+                            and 'ContinualDataset' in str(inspect.getmro(getattr(mod, x))[1:]) and 'GCLDataset' not in str(inspect.getmro(getattr(mod, x)))]
+    for d in dataset_classes_name:
+        c = getattr(mod, d)
+        signature = inspect.signature(c.__init__)
+        parsable_args = infer_args_from_signature(signature, excluded_signature=base_class_signature)
+        names[_normalize_dataset_name(c.NAME)] = {'class': c, 'parsable_args': parsable_args}
+
+    gcl_dataset_classes_name = [x for x in mod.__dir__() if 'type' in str(type(getattr(mod, x))) and 'GCLDataset' in str(inspect.getmro(getattr(mod, x))[1:])]
+    for d in gcl_dataset_classes_name:
+        c = getattr(mod, d)
+        signature = inspect.signature(c.__init__)
+        parsable_args = infer_args_from_signature(signature, excluded_signature=base_class_signature)
+        names[_normalize_dataset_name(c.NAME)] = {'class': c, 'parsable_args': parsable_args}
+    return names
+
+
+def _get_registered_dataset_entries():
+    names = {}
+    for dataset, dataset_conf in REGISTERED_DATASETS.items():
+        names[_normalize_dataset_name(dataset)] = {'class': dataset_conf['class'], 'parsable_args': dataset_conf['parsable_args']}
+    return names
+
+
+def _load_dataset_entry(dataset_name: str):
+    normalized_name = _normalize_dataset_name(dataset_name)
+    registered_names = _get_registered_dataset_entries()
+    if normalized_name in registered_names:
+        return registered_names[normalized_name]
+
+    module_name = _module_name_from_dataset(normalized_name)
+    mod = importlib.import_module('datasets.' + module_name)
+    base_class_signature = inspect.signature(ContinualDataset.__init__)
+    module_entries = _extract_dataset_entries_from_module(mod, base_class_signature)
+    if normalized_name in module_entries:
+        return module_entries[normalized_name]
+    if module_name.replace('_', '-') in module_entries:
+        return module_entries[module_name.replace('_', '-')]
+    raise KeyError(f'Dataset `{dataset_name}` not found in module `datasets.{module_name}`.')
+
+
 def register_dataset(name: str) -> Callable:
     """
     Decorator to register a ContinualDatasety. The decorator may be used on a class that inherits from `ContinualDataset` or on a function that returns a `ContinualDataset` instance.
@@ -64,46 +115,35 @@ def get_dataset_names(names_only=False):
         the named of the available continual datasets
     """
 
+    if names_only:
+        names = {_normalize_dataset_name(dataset) for dataset in REGISTERED_DATASETS.keys()}
+        names.update({_normalize_dataset_name(model.split('.')[0]) for model in os.listdir('datasets')
+                      if not model.find('__') > -1 and 'py' in model})
+        return sorted(names)
+
     def _dataset_names():
         names = {}  # key: dataset name, value: {'class': dataset class, 'parsable_args': parsable_args}
-        for dataset, dataset_conf in REGISTERED_DATASETS.items():
-            names[dataset.replace('_', '-')] = {'class': dataset_conf['class'], 'parsable_args': dataset_conf['parsable_args']}
+        names.update(_get_registered_dataset_entries())
 
         base_class_signature = inspect.signature(ContinualDataset.__init__)
         for dataset in get_all_datasets_legacy():  # for the datasets that follow the old naming convention, load the dataset class and check for errors
-            if dataset in names:  # dataset registered with the new convention has priority
+            normalized_dataset = _normalize_dataset_name(dataset)
+            if normalized_dataset in names:  # dataset registered with the new convention has priority
                 continue
 
             try:
                 mod = importlib.import_module('datasets.' + dataset)
-                dataset_classes_name = [x for x in mod.__dir__() if 'type' in str(type(getattr(mod, x)))
-                                        and 'ContinualDataset' in str(inspect.getmro(getattr(mod, x))[1:]) and 'GCLDataset' not in str(inspect.getmro(getattr(mod, x)))]
-                for d in dataset_classes_name:
-                    c = getattr(mod, d)
-                    signature = inspect.signature(c.__init__)
-                    parsable_args = infer_args_from_signature(signature, excluded_signature=base_class_signature)
-
-                    names[c.NAME.replace('_', '-')] = {'class': c, 'parsable_args': parsable_args}
-
-                gcl_dataset_classes_name = [x for x in mod.__dir__() if 'type' in str(type(getattr(mod, x))) and 'GCLDataset' in str(inspect.getmro(getattr(mod, x))[1:])]
-                for d in gcl_dataset_classes_name:
-                    c = getattr(mod, d)
-                    signature = inspect.signature(c.__init__)
-                    parsable_args = infer_args_from_signature(signature, excluded_signature=base_class_signature)
-
-                    names[c.NAME.replace('_', '-')] = {'class': c, 'parsable_args': parsable_args}
+                names.update(_extract_dataset_entries_from_module(mod, base_class_signature))
 
             except Exception as e:  # if an error is detected, raise the appropriate error message
                 warn_once(f'Error in dataset {dataset}')
                 warn_once(e)
-                names[dataset.replace('_', '-')] = e
+                names[normalized_dataset] = e
         return names
 
     if not hasattr(get_dataset_names, 'names'):
         setattr(get_dataset_names, 'names', _dataset_names())
     names = getattr(get_dataset_names, 'names')
-    if names_only:
-        return list(names.keys())
     return names
 
 
@@ -147,13 +187,18 @@ def get_dataset_class(args: Namespace, return_args=False) -> ContinualDataset:
     Returns:
         the continual dataset class
     """
-    names = get_dataset_names()
-    assert args.dataset in names
-    if isinstance(names[args.dataset], Exception):
-        raise names[args.dataset]
+    normalized_dataset = _normalize_dataset_name(args.dataset)
+    try:
+        dataset_entry = _load_dataset_entry(normalized_dataset)
+    except Exception:
+        names = get_dataset_names()
+        assert normalized_dataset in names
+        if isinstance(names[normalized_dataset], Exception):
+            raise names[normalized_dataset]
+        dataset_entry = names[normalized_dataset]
     if return_args:
-        return names[args.dataset]['class'], names[args.dataset]['parsable_args']
-    return names[args.dataset]['class']
+        return dataset_entry['class'], dataset_entry['parsable_args']
+    return dataset_entry['class']
 
 
 def get_dataset(args: Namespace) -> ContinualDataset:
@@ -178,9 +223,3 @@ def get_dataset(args: Namespace) -> ContinualDataset:
     parsed_args = {arg: getattr(args, arg) for arg in dataset_args.keys()}
 
     return dataset_class(args, **parsed_args)
-
-
-# import all files in the `datasets` folder to register the datasets
-for file in os.listdir(os.path.dirname(__file__)):
-    if file.endswith('.py') and file != '__init__.py':
-        importlib.import_module(f'datasets.{file[:-3]}')

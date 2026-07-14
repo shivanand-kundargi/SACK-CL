@@ -13,7 +13,7 @@ if __name__ == '__main__':
 from argparse import ArgumentParser, Namespace
 
 from backbone import REGISTERED_BACKBONES
-from datasets import get_dataset_names, get_dataset_config_names
+from datasets import get_dataset_names, get_dataset_config_names, get_dataset_class
 from models import get_all_models
 from models.utils.continual_model import ContinualModel
 from utils import binary_to_boolean_type, custom_str_underscore, field_with_aliases
@@ -179,14 +179,14 @@ def add_dynamic_parsable_args(parser: ArgumentParser, dataset: str, backbone: st
     """
 
     ds_group = parser.add_argument_group('Dataset arguments', 'Arguments used to define the dataset.')
-    registered_datasets = get_dataset_names()
     if isinstance(dataset, dict):
         assert 'type' in dataset, "The dataset `type` (i.e., the registered name) must be defined in the dictionary."
-        bk_name = dataset['type'].replace('_', '-').lower()
-        bk_args = {**registered_datasets[bk_name]['parsable_args'], **dataset['args']}
-        dataset = bk_name
+        dataset_name = dataset['type'].replace('_', '-').lower()
+        _, dataset_parsable_args = get_dataset_class(Namespace(dataset=dataset_name), return_args=True)
+        bk_args = {**dataset_parsable_args, **dataset['args']}
     else:
-        bk_args = registered_datasets[dataset.replace('_', '-').lower()]['parsable_args']
+        dataset_name = dataset.replace('_', '-').lower()
+        _, bk_args = get_dataset_class(Namespace(dataset=dataset_name), return_args=True)
     build_parsable_args(ds_group, bk_args)
 
     bk_group = parser.add_argument_group('Backbone arguments', 'Arguments used to define the backbone network.')
@@ -234,9 +234,32 @@ def add_initial_args(parser) -> ArgumentParser:
                         help='(deprecated) Loads the best arguments for each method, dataset and memory buffer. '
                         'NOTE: This option is deprecated and not up to date.')
     parser.add_argument('--cog_cl', type=int, choices=(0, 1), default=0, required=True)
-    parser.add_argument('--sack_scores_type', type=int, choices=(0, 1, 2), default=0, required=True)
+    parser.add_argument('--sack_scores_type', type=int, choices=(0, 1, 2, 3, 4), default=0, required=True,
+                        help='Legacy SACK schedule selector: 0=w_to_u, 1=u_to_w, 2=u_to_random, 3=wbar_to_u, 4=u_to_wbar.')
+    parser.add_argument('--sack_schedule_variant',
+                        type=lambda value: str(value).strip().lower().replace('-', '_'),
+                        choices=('w_to_u', 'u_to_w', 'wbar_to_u', 'u_to_wbar', 'u_to_random', 'u_to_random_fixed', 'random_to_u'),
+                        default=None,
+                        help='Explicit SACK sampling schedule variant. Overrides `--sack_scores_type` when provided.')
     parser.add_argument('--sack_similarity_percentile', type=float, default=75.0,
                         help='Percentile (0-100) used to keep high-confidence concept activations for SACK scoring.')
+    parser.add_argument('--sack_aggregation',
+                        type=lambda value: str(value).strip().lower().replace('_', '-'),
+                        choices=('max-mean', 'mean-mean', 'min-mean', 'top3-mean', 'top5-mean',
+                                 'softmax-sharp', 'softmax-smooth', 'max-max'),
+                        default='max-mean',
+                        help='Aggregation used to turn the SACK similarity matrix into a per-class weight.')
+    parser.add_argument('--sack_weight_granularity',
+                        type=lambda value: str(value).strip().lower().replace('-', '_'),
+                        choices=('class', 'sample'),
+                        default='class',
+                        help='Use one SACK weight per incoming class or one SACK weight per incoming sample.')
+    parser.add_argument('--sack_sample_topk_concepts', type=int, default=5,
+                        help='For sample-level SACK, keep the top-k class-bank concepts selected by CLIP image-text similarity.')
+    parser.add_argument('--sack_sample_score_batch_size', type=int, default=128,
+                        help='Batch size used to encode images for sample-level SACK concept selection.')
+    parser.add_argument('--sack_sample_dump_dictionary', type=int, choices=(0, 1), default=1,
+                        help='Write the sample-level concept dictionary and scores to the SACK cache directory.')
     parser.add_argument('--concept_units_reg', type=int, default=0,
                         help='Enable CLIP-Dissect unit activation regularizer.')
     parser.add_argument('--concept_units_lambda', type=float, default=0.1,

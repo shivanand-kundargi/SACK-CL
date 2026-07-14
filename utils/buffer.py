@@ -57,8 +57,20 @@ def icarl_replay(self: 'ContinualModel', dataset: 'ContinualDataset', val_set_sp
             self.val_dataset = deepcopy(dataset.train_loader.dataset)
 
         data_container = dataset.train_loader.dataset.data
-        data_concatenate = torch.cat if isinstance(data_container, torch.Tensor) else np.concatenate
         need_aug = hasattr(dataset.train_loader.dataset, 'not_aug_transform')
+
+        def _stack_object_images(container):
+            if not isinstance(container, np.ndarray) or container.dtype != object or container.ndim != 1:
+                return container
+            if len(container) == 0:
+                return container
+            first = np.asarray(container[0])
+            if first.ndim not in (2, 3):
+                return container
+            try:
+                return np.stack([np.asarray(item) for item in container], axis=0)
+            except ValueError:
+                return container
 
         def _ensure_object_array(container):
             if isinstance(container, np.ndarray) and container.dtype != object:
@@ -82,13 +94,23 @@ def icarl_replay(self: 'ContinualModel', dataset: 'ContinualDataset', val_set_sp
                 wrapper[i] = img
             return wrapper
 
+        if not isinstance(data_container, torch.Tensor):
+            data_container = _stack_object_images(data_container)
+            dataset.train_loader.dataset.data = data_container
+            if val_set_split > 0 and hasattr(self, 'val_dataset'):
+                self.val_dataset.data = _stack_object_images(self.val_dataset.data)
+
+        data_concatenate = torch.cat if isinstance(data_container, torch.Tensor) else np.concatenate
+
         if not need_aug:
             def refold_transform(x):
                 return x.cpu()
         else:
             sample = data_container[0]
             sample_shape = getattr(sample, 'shape', None)
-            if isinstance(sample, torch.Tensor):
+            if isinstance(data_container, np.ndarray) and data_container.dtype == object:
+                data_shape = None
+            elif isinstance(sample, torch.Tensor):
                 data_shape = sample.dim()
             elif sample_shape is not None:
                 data_shape = len(sample_shape)

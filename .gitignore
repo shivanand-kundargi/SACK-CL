@@ -5,10 +5,13 @@
 data/CIFAR-100-C/
 data/CIFAR100/
 data/CUB200/
+data/hf_cache/
 data/imagenet-r/
 data/inaturalist/
 data/inaturalist1000/
 data/results/
+data/w3_pydeps_gptoss*/
+unsloth_compiled_cache/
 checkpoints/
 *.png
 *.pt
